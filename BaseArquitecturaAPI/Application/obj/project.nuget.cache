@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zqZJWv7Zhhnit9ggUxchv3P8S7eH8ffX1WxKwhJUlG/iIi8atYzfWV4HvJPnNzjEnvhxTi1OcMPSaWojkVCNFQ==",
+  "dgSpecHash": "Yu2327ujTcFAUJgJWawrgu9V/6qGk9jV5iWx2AwWSk+xUXbPylE0TZthBay+Ds6d0pZ2fdOBYZnopGH+goexxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.7\\microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.extensions.options\\3.0.0\\microsoft.extensions.options.3.0.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.0\\microsoft.extensions.primitives.3.0.0.nupkg.sha512",
+    "C:\\Users\\Edgard Abud\\.nuget\\packages\\nlog\\4.7.4\\nlog.4.7.4.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
   ],
   "logs": []

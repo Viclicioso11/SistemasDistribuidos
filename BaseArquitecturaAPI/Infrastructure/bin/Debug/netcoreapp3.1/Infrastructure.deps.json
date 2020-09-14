@@ -434,6 +434,14 @@
           }
         }
       },
+      "NLog/4.7.4": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.4.12037"
+          }
+        }
+      },
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1087,7 +1095,8 @@
           "FluentValidation.AspNetCore": "9.2.0",
           "MediatR": "8.1.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "8.1.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.7"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.7",
+          "NLog": "4.7.4"
         },
         "runtime": {
           "Application.dll": {}
@@ -1364,6 +1373,13 @@
       "sha512": "sha512-ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
+    },
+    "NLog/4.7.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gSGX/ur0P3jp17H37HW7ycXR6L1578tQbilf4HLX1t2viCDFgtwEsfHMPf0/jcuf7/qqGgoU/vKgyQ9hzxuOEQ==",
+      "path": "nlog/4.7.4",
+      "hashPath": "nlog.4.7.4.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

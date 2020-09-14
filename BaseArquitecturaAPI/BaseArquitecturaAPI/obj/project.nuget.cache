@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vCjxXKNNCatnMJqO5kYDWfK6yj53+JKU+487r0Mg3fSGAeo1aS8aewWT4Yemx+T/tQY0u/hr26lhBdRml68F6g==",
+  "dgSpecHash": "X6sLOjG1g9z6sJrQKdZxsVYjCzodV/pyaYXxBbIPV2wOVsbz0Umh0ZaI1joKJCauSEg4f+Lw9lSc6pLCc2191A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Edgard Abud\\.nuget\\packages\\nlog\\4.7.4\\nlog.4.7.4.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

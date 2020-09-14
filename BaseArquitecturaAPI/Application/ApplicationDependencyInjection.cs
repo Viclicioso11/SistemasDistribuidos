@@ -1,4 +1,4 @@
-﻿using Application.Common.Behaviours;
+﻿using Application.Common.Behaviors;
 using AutoMapper;
 using FluentValidation;
 using MediatR;
@@ -16,6 +16,8 @@ namespace Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehavior<,>));
+            
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return services;
