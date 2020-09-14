@@ -1,4 +1,5 @@
-﻿using Application.Common.Interfaces;
+﻿using Application.Common.Exceptions;
+using Application.Common.Interfaces;
 using Application.Test.Dtos;
 using Application.Test.Querys;
 using AutoMapper;
@@ -26,9 +27,12 @@ namespace Application.Test.Handlers
 
         public async Task<TestDto> Handle(GetTestByIdQuery request, CancellationToken cancellationToken)
         {
-            var testInformation = await _service.GetTestById(request.TestId);
+            //var testInformation = await _service.GetTestById(request.TestId);
 
-            return _mapper.Map<TestDto>(testInformation);
+            //probando el api filter
+            throw new NotFoundException("", request.TestId);
+
+            return new TestDto { };//_mapper.Map<TestDto>(testInformation);
         }
     }
 }

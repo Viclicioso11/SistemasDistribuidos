@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "xskRIgOLOVgsBuuTiJ7BbMwoKOaDy3EBccR9IdjeucAgLpM2qh9LO77iKHPNKHkUcfSe66WiYkuIUYxSAnhQNg==",
+  "dgSpecHash": "vCjxXKNNCatnMJqO5kYDWfK6yj53+JKU+487r0Mg3fSGAeo1aS8aewWT4Yemx+T/tQY0u/hr26lhBdRml68F6g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
+    "C:\\Users\\Edgard Abud\\.nuget\\packages\\fluentvalidation\\9.2.0\\fluentvalidation.9.2.0.nupkg.sha512",
+    "C:\\Users\\Edgard Abud\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.2.0\\fluentvalidation.aspnetcore.9.2.0.nupkg.sha512",
+    "C:\\Users\\Edgard Abud\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.2.0\\fluentvalidation.dependencyinjectionextensions.9.2.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.1.0\\mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

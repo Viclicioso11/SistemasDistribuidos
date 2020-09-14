@@ -68,3 +68,7 @@ C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\Ba
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.dll
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.pdb
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.genruntimeconfig.cache
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.MvcApplicationPartsAssemblyInfo.cs
