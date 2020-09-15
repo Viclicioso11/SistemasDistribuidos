@@ -1,2 +1,3 @@
 # SistemasDistribuidos
-Arquitectura base de rueba para la asignatura de sistemas distribuidos
+Arquitectura del API de la asignatura de Sistemas Distribudos. 
+
