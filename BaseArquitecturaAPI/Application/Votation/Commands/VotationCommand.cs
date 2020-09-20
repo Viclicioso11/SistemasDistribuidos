@@ -22,5 +22,6 @@ namespace Application.Votation.Commands
 
         public int CityId { get; set; }
 
+
     }
 }

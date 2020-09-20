@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Application.Test.Validators
 {
-    public class CreateTestCommandValidator : AbstractValidator<CreateTestCommand>
+    /*public class CreateTestCommandValidator : AbstractValidator<CreateTestCommand>
     {
         public CreateTestCommandValidator()
         {
@@ -18,5 +18,5 @@ namespace Application.Test.Validators
 
 
         }
-    }
+    }*/
 }

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace Application.Common.Behaviors
 {
     public class UnhandledExceptionBehavior <TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-        where TRequest : IRequest<TResponse>
     {
 
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();

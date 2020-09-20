@@ -25,5 +25,9 @@ namespace Domain.Entities
         public VotationType VotationType { get; set; }
 
         public IEnumerable<VotationDetail> VotationDetails { get; set; }
+
+        public IEnumerable<VoteAudit> VoteAudits { get; set; }
+
+        public IEnumerable<VotationAudit> VotationAudits { get; set; }
     }
 }

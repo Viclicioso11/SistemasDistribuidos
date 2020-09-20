@@ -25,6 +25,8 @@
       "BaseArquitecturaAPI/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "AutoMapper": "10.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.0.1",
           "Infrastructure": "1.0.0",
           "MediatR": "8.1.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",

@@ -8,10 +8,6 @@ namespace Domain.Entities
     {
         public int UserAuditId { get; set; }
 
-        public int UserChangedId { get; set; } 
-
-        public int ChangesMadeByUserId { get; set; }
-
         public DateTime CreatedAt { get; set; }
 
         public DateTime StatusChangedAt { get; set; }

@@ -16,7 +16,7 @@ namespace Domain.Entities
 
         public User ChangesMadeByUser { get; set; }
 
-        public bool CandidateStatusChangedBy { get; set; }
+        public bool CandidateStatusChangedTo { get; set; }
 
 
     }

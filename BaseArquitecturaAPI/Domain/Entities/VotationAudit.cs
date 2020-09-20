@@ -8,14 +8,14 @@ namespace Domain.Entities
     {
         public int VotationAuditId { get; set; }
 
-        public int ChangesMadeByUserId { get; set; }
-
         public DateTime StatusChangedAt { get; set; }
 
         public DateTime CreatedAt { get; set; }
 
         public User ChangesMadeByUser { get; set; }
 
-        public bool VotationStatusChangedBy { get; set; }
+        public bool VotationStatusChangedTo { get; set; }
+
+        public Votation Votation { get; set; }
     }
 }

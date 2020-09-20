@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Application.Test.Commands;
-using Application.Test.Querys;
 using BaseArquitecturaAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,18 +23,18 @@ namespace BaseArquitecturaAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTestValueById(int id)
         {
-            var response = await Mediator.Send(new GetTestByIdQuery { TestId = id});
+            //var response = await Mediator.Send(new GetTestByIdQuery { TestId = id});
 
-            return Ok(response);
+            return Ok();
         }
 
         // GET api/<controller>/5
         [HttpPost()]
         public async Task<IActionResult> PostCreateTest([FromBody] CreateTestModelJson body)
         {
-            var response = await Mediator.Send(new CreateTestCommand { Descripcion = body.Description, Id = body.Id});
+            //var response = await Mediator.Send(new CreateTestCommand { Descripcion = body.Description, Id = body.Id});
 
-            return Ok(response);
+            return Ok();
         }
 
     }

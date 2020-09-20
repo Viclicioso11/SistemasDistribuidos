@@ -8,8 +8,6 @@ namespace Domain.Entities
     {
         public int CandidateId { get; set; }
 
-        public int PoliticalPartyId { get; set; }
-
         public string FirstName { get; set; }
 
         public string MiddleName { get; set; }

@@ -15,6 +15,7 @@ namespace Application.Test.Handlers
     /// <summary>
     /// This class handle the request after getting into the command or query class
     /// </summary>
+    /*
     public class GetTestByIdQueryHandler : IRequestHandler<GetTestByIdQuery, TestDto>
     {
         private readonly IMapper _mapper;
@@ -34,5 +35,5 @@ namespace Application.Test.Handlers
 
             return new TestDto { };//_mapper.Map<TestDto>(testInformation);
         }
-    }
+    }*/
 }

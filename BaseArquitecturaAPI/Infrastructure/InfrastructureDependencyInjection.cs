@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
+using Microsoft.AspNetCore.Http;
 
 namespace Infrastructure
 {
@@ -16,8 +17,9 @@ namespace Infrastructure
     {
         public static IServiceCollection AddInfrastructureDependencyInjection (this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTransient<ITestService, TestService>();
+            services.AddTransient<IVotationService, VotationService>();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(configuration.GetConnectionString("votationDb")));
             return services;
 

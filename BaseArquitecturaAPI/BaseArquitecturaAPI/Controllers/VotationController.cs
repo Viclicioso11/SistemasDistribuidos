@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Application.Test.Commands;
-using Application.Test.Querys;
+using Application.Votation.Commands;
+using AutoMapper;
 using BaseArquitecturaAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,26 +15,37 @@ namespace BaseArquitecturaAPI.Controllers
     public class VotationController : BaseController
     {
 
+        private readonly IMapper _mapper;
+        public VotationController(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
+
         [HttpGet]
-        public IActionResult GetAllTests()
+        public IActionResult GetVotationById()
         {
             return Ok();
         }
 
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetTestValueById(int id)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutUpdateVotation([FromBody] VotationModelJson body, [FromRoute]int id)
         {
-            var response = await Mediator.Send(new GetTestByIdQuery { TestId = id});
+            /*
+             * TO DO
+             * 
+             */
 
-            return Ok(response);
+            return Ok();
         }
 
 
         [HttpPost()]
         public async Task<IActionResult> PostCreateVotation([FromBody] VotationModelJson body)
         {
-            var response = await Mediator.Send(new CreateTestCommand { Descripcion = body.Description, Id = body.Id});
+            if (body == null)
+                return BadRequest();
+            var response = await Mediator.Send(_mapper.Map<VotationCommand>(body));
 
             return Ok(response);
         }

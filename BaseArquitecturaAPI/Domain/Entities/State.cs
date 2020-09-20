@@ -10,8 +10,6 @@ namespace Domain.Entities
 
         public string StateName { get; set; }
 
-        public int CountryId { get; set; }
-
         public Country Country { get; set; }
 
         public IEnumerable<City> Cities { get; set; }

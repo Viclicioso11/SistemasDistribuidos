@@ -7,6 +7,9 @@ using Microsoft.Extensions.Hosting;
 using Application;
 using Infrastructure;
 using BaseArquitecturaAPI.ApiExceptionFilter;
+using AutoMapper;
+using System.Reflection;
+using BaseArquitecturaAPI.Policies;
 
 namespace BaseArquitecturaAPI
 {
@@ -24,11 +27,15 @@ namespace BaseArquitecturaAPI
         {
 
             services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)))
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+                .AddJsonOptions(
+                options => options.JsonSerializerOptions.PropertyNamingPolicy = SnakeCaseNamingPolicy.Instance);
 
             services.AddApplicationDependencyInjection();
             services.AddInfrastructureDependencyInjection(Configuration);
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

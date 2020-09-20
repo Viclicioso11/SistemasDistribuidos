@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Application.Test.Handlers
 {
-    public class CreateTestCommandHandler : IRequestHandler<CreateTestCommand, TestDto>
+    /*public class CreateTestCommandHandler : IRequestHandler<CreateTestCommand, TestDto>
     {
         private readonly IMapper _mapper;
         private readonly ITestService _service;
@@ -24,13 +24,13 @@ namespace Application.Test.Handlers
         public async Task<TestDto> Handle(CreateTestCommand request, CancellationToken cancellationToken)
         {
             
-            /*
              * consume services here
             var testInformation = await _service.GetTestById(request.Id);
-            */
+           
             
-            return new TestDto { };
+            //return new TestDto { };
             //return _mapper.Map<TestDto>(testInformation);
         }
     }
+*/
 }

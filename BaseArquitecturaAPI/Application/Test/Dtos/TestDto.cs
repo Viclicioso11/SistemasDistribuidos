@@ -7,7 +7,7 @@ using AutoMapper;
 
 namespace Application.Test.Dtos
 {
-    public class TestDto : IMapFrom<TestEntity>
+    /*public class TestDto : IMapFrom<TestEntity>
     {
         int Id { get; set; }
 
@@ -24,6 +24,6 @@ namespace Application.Test.Dtos
         }
 
 
-    }
+    }*/
 }
 

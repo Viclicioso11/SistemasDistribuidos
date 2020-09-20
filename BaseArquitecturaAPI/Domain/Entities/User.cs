@@ -28,7 +28,9 @@ namespace Domain.Entities
 
         public IEnumerable<Vote> Votes { get; set; }
 
-        public IEnumerable<UserAudit> UserAudits { get; set; }
+        public IEnumerable<UserAudit> UserChangedAudits { get; set; }
+
+        public IEnumerable<UserAudit> UserThatChangeAudits { get; set; }
 
         public IEnumerable<CandidateAudit> CandidateAudits { get; set; }
 
