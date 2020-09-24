@@ -1,10 +1,10 @@
-﻿using Application.Votation.Dtos;
+﻿using Application.VotationActions.Dtos;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.Votation.Commands
+namespace Application.VotationActions.Commands
 {
     public class VotationCommand : IRequest<VotationDto>
     {

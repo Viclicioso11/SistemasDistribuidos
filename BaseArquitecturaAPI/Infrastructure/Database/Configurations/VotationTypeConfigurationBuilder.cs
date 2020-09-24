@@ -28,7 +28,15 @@ namespace Infrastructure.Database.Configurations
                 .Property(v => v.VotationTypeDescription)
                 .IsRequired()
                 .HasMaxLength(2)
-                .HasColumnType("varchar(2)");
+                .HasColumnType("varchar(200)");
+
+            builder
+                .HasData(new VotationType
+                {
+                    VotationTypeId = 1,
+                    VotationTypeName = "Alcaldía",
+                    VotationTypeDescription = "Votaciones municipales"
+                });
 
         }
     }

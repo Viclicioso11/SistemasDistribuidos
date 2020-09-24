@@ -51,6 +51,18 @@ namespace Infrastructure.Database.Configurations
                 .IsRequired()
                 .HasConstraintName("FkVotationTypeId");
 
+            builder
+                .HasData(new Votation
+                {
+                    VotationId = 1,
+                    VotationDescription = "Votacion de pruebas",
+                    VotationEndDate = new DateTime(2020, 11, 2),
+                    VotationStartDate = new DateTime(2020, 09, 29),
+                    CityId = 1,
+                    VotationTypeId = 1,
+                    VotationStatus = true
+                });
+
                 
         }
     }

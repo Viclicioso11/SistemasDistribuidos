@@ -1,10 +1,10 @@
-﻿using Application.Votation.Commands;
+﻿using Application.VotationActions.Commands;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.Votation.Validators
+namespace Application.VotationActions.Validators
 {
     public class VotationValidator : AbstractValidator<VotationCommand>
     {

@@ -32,9 +32,13 @@ namespace BaseArquitecturaAPI
                 options => options.JsonSerializerOptions.PropertyNamingPolicy = SnakeCaseNamingPolicy.Instance);
 
             services.AddApplicationDependencyInjection();
+
             services.AddInfrastructureDependencyInjection(Configuration);
+
             services.AddAutoMapper(typeof(Startup));
-            services.AddControllers();
+
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
         }
 

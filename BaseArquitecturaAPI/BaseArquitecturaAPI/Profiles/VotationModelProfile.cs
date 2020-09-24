@@ -1,5 +1,5 @@
 ﻿using Application.Common.Mappings;
-using Application.Votation.Commands;
+using Application.VotationActions.Commands;
 using AutoMapper;
 using BaseArquitecturaAPI.Models;
 using System;

@@ -1,5 +1,5 @@
-﻿using Application.Votation.Commands;
-using Application.Votation.Dtos;
+﻿using Application.VotationActions.Commands;
+using Application.VotationActions.Dtos;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.ApplicationHandler.Handlers
+namespace Application.VotationActions.Handlers
 {
     public class VotationCommandHandler : IRequestHandler<VotationCommand, VotationDto>
     {

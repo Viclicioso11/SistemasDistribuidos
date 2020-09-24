@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using AutoMapper;
 
 namespace Application.Common.Mappings
 {
-    public class MappingProfile
+    public class MappingProfile : Profile
     {
        public MappingProfile()
        {

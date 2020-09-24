@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Application.Votation.Commands;
+using Application.VotationActions.Commands;
+using Application.VotationActions.Querys;
 using AutoMapper;
 using BaseArquitecturaAPI.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -21,10 +22,16 @@ namespace BaseArquitecturaAPI.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult GetVotationById()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetVotationById(int id)
         {
-            return Ok();
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var votation = await Mediator.Send(new GetVotationByIdQuery { VotationId = id });
+
+            return Ok(votation);
         }
 
 

@@ -1,7 +1,4 @@
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.csprojAssemblyReference.cache
-C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.csproj.CoreCompileInputs.cache
-C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.AssemblyInfoInputs.cache
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.AssemblyInfo.cs
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -73,3 +70,9 @@ C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\Ba
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.dll
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.pdb
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.genruntimeconfig.cache
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.csproj.CoreCompileInputs.cache
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.MvcApplicationPartsAssemblyInfo.cache
