@@ -24,7 +24,7 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("Description")
                 .IsRequired()
                 .HasMaxLength(200)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(200)");
 
             builder
                 .Property(v => v.VotationStatus)

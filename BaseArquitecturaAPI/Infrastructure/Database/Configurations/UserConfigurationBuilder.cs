@@ -23,28 +23,28 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("LastName")
                 .IsRequired()
                 .HasMaxLength(15)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(15)");
 
             builder
                 .Property(v => v.FirstName)
                 .HasColumnName("FirstName")
                 .IsRequired()
                 .HasMaxLength(15)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(15)");
 
             builder
                 .Property(v => v.MiddleName)
                 .HasColumnName("MiddleName")
                 .HasMaxLength(15)
                 .IsRequired()
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(15)");
 
             builder
                 .Property(v => v.Surname)
                 .HasColumnName("Surname")
                 .HasMaxLength(15)
                 .IsRequired()
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(15)");
 
             builder
                 .Property(v => v.Status)
@@ -58,21 +58,21 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("Email")
                 .HasMaxLength(20)
                 .IsRequired()
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(20)");
 
             builder
                 .Property(v => v.Identification)
                 .HasColumnName("Identification")
                 .HasMaxLength(20)
                 .IsRequired()
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(20)");
 
             builder
                 .Property(v => v.Password)
                 .HasColumnName("Password")
                 .HasMaxLength(20)
                 .IsRequired()
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(20)");
 
         }
     }

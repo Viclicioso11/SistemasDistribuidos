@@ -27,12 +27,14 @@ namespace Infrastructure.Database.Configurations
             builder
                .Property(v => v.StatusChangedAt)
                .HasColumnName("StatusChangedAt")
-               .HasColumnType("datetime");
+               .HasColumnType("datetime")
+               .IsRequired(false);
 
             builder
                .Property(v => v.CreatedAt)
                .HasColumnName("CreatedAt")
-               .HasColumnType("datetime");
+               .HasColumnType("datetime")
+               .IsRequired(false);
 
             builder
                .HasOne(v => v.ChangesMadeByUser)

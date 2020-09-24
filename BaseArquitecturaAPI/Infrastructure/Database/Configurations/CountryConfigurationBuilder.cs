@@ -23,7 +23,11 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("Name")
                 .IsRequired()
                 .HasMaxLength(20)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(20)");
+
+            builder
+                .HasData(
+                    new Country { CountryId = 1, CountryName = "Nicaragua" });
         }
     }
 }

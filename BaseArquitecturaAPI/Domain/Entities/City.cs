@@ -13,5 +13,7 @@ namespace Domain.Entities
         public string CityName { get; set; }
 
         public State State { get; set; }
+
+        public int StateId { get; set; }
     }
 }

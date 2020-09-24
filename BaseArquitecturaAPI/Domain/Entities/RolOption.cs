@@ -11,5 +11,9 @@ namespace Domain.Entities
         public Rol Rol { get; set; }
 
         public Option Option { get; set; }
+
+        public int RolId { get; set; }
+
+        public int OptionId { get; set; }
     }
 }

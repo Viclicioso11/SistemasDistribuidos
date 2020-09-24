@@ -12,6 +12,8 @@ namespace Domain.Entities
 
         public Country Country { get; set; }
 
+        public int CountryId { get; set; }
+
         public IEnumerable<City> Cities { get; set; }
     }
 }

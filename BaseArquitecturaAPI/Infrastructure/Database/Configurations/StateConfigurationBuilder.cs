@@ -23,13 +23,17 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("Name")
                 .IsRequired()
                 .HasMaxLength(20)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(20)");
 
             builder
                .HasOne(v => v.Country)
                .WithMany(v => v.States)
                .IsRequired()
                .HasConstraintName("FkCountryId");
+
+            builder
+                .HasData(
+                new State { StateId = 1, StateName = "Boaco", CountryId = 1 });
         }
     }
 }

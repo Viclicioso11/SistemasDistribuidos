@@ -22,13 +22,13 @@ namespace Infrastructure.Database.Configurations
                 .Property(v => v.VotationTypeName)
                 .IsRequired()
                 .HasMaxLength(30)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(30)");
 
             builder
                 .Property(v => v.VotationTypeDescription)
                 .IsRequired()
                 .HasMaxLength(2)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(2)");
 
         }
     }

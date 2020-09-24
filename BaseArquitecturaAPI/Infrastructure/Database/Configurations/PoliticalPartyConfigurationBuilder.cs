@@ -23,14 +23,14 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("Name")
                 .IsRequired()
                 .HasMaxLength(30)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(30)");
 
             builder
                 .Property(v => v.Abreviation)
                 .HasColumnName("Abreviation")
                 .IsRequired()
                 .HasMaxLength(6)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(6)");
 
         }
     }

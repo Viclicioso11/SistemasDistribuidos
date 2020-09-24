@@ -26,7 +26,8 @@ namespace Infrastructure.Database.Configurations
             builder
                .Property(v => v.CreatedAt)
                .HasColumnName("CreatedAt")
-               .HasColumnType("datetime");
+               .HasColumnType("datetime")
+               .IsRequired(false);
 
             builder
                .HasOne(v => v.Votation)

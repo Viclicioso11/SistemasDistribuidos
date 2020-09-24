@@ -23,28 +23,28 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("LastName")
                 .IsRequired()
                 .HasMaxLength(15)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(15)");
 
             builder
                 .Property(v => v.FirstName)
                 .HasColumnName("FirstName")
                 .IsRequired()
                 .HasMaxLength(15)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(15)");
 
             builder
                 .Property(v => v.MiddleName)
                 .HasColumnName("MiddleName")
                 .HasMaxLength(15)
                 .IsRequired()
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(15)");
 
             builder
                 .Property(v => v.Surname)
                 .HasColumnName("Surname")
                 .HasMaxLength(15)
                 .IsRequired()
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(15)");
 
             builder
                 .Property(v => v.Status)

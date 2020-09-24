@@ -27,34 +27,40 @@ namespace Infrastructure.Database.Configurations
             builder
                 .Property(v => v.CreatedAt)
                 .HasColumnName("CreatedAt")
-                .HasColumnType("datetime");
+                .HasColumnType("datetime")
+                .IsRequired(false);
 
             builder
                 .Property(v => v.StatusChangedAt)
                 .HasColumnName("StatusChangedAt")
-                .HasColumnType("datetime");
+                .HasColumnType("datetime")
+                .IsRequired(false);
 
             builder
                 .Property(v => v.LastLogin)
                 .HasColumnName("LastLogin")
-                .HasColumnType("datetime");
+                .HasColumnType("datetime")
+                .IsRequired(false);
 
             builder
                 .Property(v => v.ChangeMadeAt)
                 .HasColumnName("ChangeMadeAt")
-                .HasColumnType("datetime");
+                .HasColumnType("datetime")
+                .IsRequired(false);
 
             builder
                 .Property(v => v.LastEmail)
                 .HasColumnName("LastEmail")
                 .HasMaxLength(20)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(20)")
+                .IsRequired(false);
 
             builder
                 .Property(v => v.LastPassword)
                 .HasColumnName("LastPassword")
                 .HasMaxLength(20)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(20)")
+                .IsRequired(false);
 
             builder
                .HasOne(v => v.UserChanged)

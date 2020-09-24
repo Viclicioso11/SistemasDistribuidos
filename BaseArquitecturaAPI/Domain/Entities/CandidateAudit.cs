@@ -8,15 +8,15 @@ namespace Domain.Entities
     {
         public int CandidateAuditId { get; set; }
 
-        public int ChangesMadeByUserId { get; set; }
+        public int? ChangesMadeByUserId { get; set; }
 
-        public DateTime StatusChangedAt { get; set; }
+        public DateTime? StatusChangedAt { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         public User ChangesMadeByUser { get; set; }
 
-        public bool CandidateStatusChangedTo { get; set; }
+        public bool? CandidateStatusChangedTo { get; set; }
 
 
     }

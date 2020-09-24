@@ -18,10 +18,13 @@ namespace Domain.Entities
 
         public bool Status { get; set; }
 
+        public int PoliticalPartyId { get; set; }
+
         public PoliticalParty PoliticalParty { get; set; }
 
         public IEnumerable<VotationDetail> VotationDetails { get; set; }
 
         public IEnumerable<Vote> Votes { get; set; }
+
     }
 }

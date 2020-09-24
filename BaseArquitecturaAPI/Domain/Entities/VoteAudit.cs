@@ -11,5 +11,9 @@ namespace Domain.Entities
         public User User { get; set; }
 
         public Votation Votation { get; set; }
+
+        public int UserId { get; set; }
+
+        public int VotationId { get; set; }
     }
 }

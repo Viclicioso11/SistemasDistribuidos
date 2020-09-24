@@ -23,20 +23,24 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("Name")
                 .IsRequired()
                 .HasMaxLength(20)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(20)");
 
             builder
                 .Property(v => v.CityCode)
                 .HasColumnName("Code")
                 .IsRequired()
                 .HasMaxLength(5)
-                .HasColumnType("varchar");
+                .HasColumnType("varchar(5)");
 
             builder
                .HasOne(v => v.State)
                .WithMany(v => v.Cities)
                .IsRequired()
                .HasConstraintName("FkStateId");
+
+            builder
+                .HasData(
+                new City { CityId = 1, CityName = "Boaco", CityCode = "361", StateId = 1 });
         }
     }
 }

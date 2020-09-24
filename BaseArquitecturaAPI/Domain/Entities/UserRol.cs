@@ -12,5 +12,9 @@ namespace Domain.Entities
 
         public User User { get; set; }
 
+        public int RolId { get; set; }
+
+        public int UserId { get; set; }
+
     }
 }
