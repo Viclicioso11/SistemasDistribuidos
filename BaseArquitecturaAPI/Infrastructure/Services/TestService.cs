@@ -10,7 +10,7 @@ namespace Infrastructure.Services
     /// <summary>
     /// This class implement TestService Interface and is responsable of connecting to db or to http requests
     /// </summary>
-    public class TestService : ITestService
+    /*public class TestService : ITestService
     {
 
         public TestService()
@@ -32,7 +32,8 @@ namespace Infrastructure.Services
                 Description = "Esta es la base",
                 Name = "Test",
                 State = true
-            };*/
+            };
         }
     }
+    */
 }

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseArquitecturaAPI", "BaseArquitecturaAPI\BaseArquitecturaAPI.csproj", "{199FF57B-D345-4FE2-8C53-B5FE81E49F02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseArquitecturaAPI", "BaseArquitecturaAPI\BaseArquitecturaAPI.csproj", "{199FF57B-D345-4FE2-8C53-B5FE81E49F02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{DB85AB07-54AE-4B28-A07D-4A864A407800}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{DB85AB07-54AE-4B28-A07D-4A864A407800}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{4E9358CF-A6EC-41DB-9D8C-96ECA44F788E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{4E9358CF-A6EC-41DB-9D8C-96ECA44F788E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{05610C74-2AD7-4642-97AC-EE6E1BC343EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{05610C74-2AD7-4642-97AC-EE6E1BC343EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

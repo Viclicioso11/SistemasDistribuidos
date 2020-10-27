@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {}
+    "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {
+    "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Edgard Abud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\obj\\",
+        "projectPath": "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edgard Abud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj"
+              "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj"
               }
             }
           }
@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[8.0.1, )"
             },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[8.1.0, )"
@@ -61,6 +65,14 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[3.1.7, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             }
           },
           "imports": [
@@ -74,25 +86,28 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj": {
+    "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Edgard Abud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonathan\\Source\\Repos\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edgard Abud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
