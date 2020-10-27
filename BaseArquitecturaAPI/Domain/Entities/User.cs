@@ -38,6 +38,8 @@ namespace Domain.Entities
 
         public IEnumerable<VoteAudit> VoteAudits { get; set; }
 
+        public IEnumerable<TwoFactorAuthentication> TwoFactorAuthentications { get; set; }
+
     }
 }
 

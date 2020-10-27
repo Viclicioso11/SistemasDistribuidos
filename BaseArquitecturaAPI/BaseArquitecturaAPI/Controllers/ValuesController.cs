@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Common.Interfaces;
 using BaseArquitecturaAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,11 @@ namespace BaseArquitecturaAPI.Controllers
     [Route("api/test")]
     public class ValuesController : BaseController
     {
+        private readonly IEmailService _service;
+        public ValuesController(IEmailService service)
+        {
+            _service = service;
+        }
         // GET: api/<controller>
         [HttpGet]
         public IActionResult GetAllTests()
@@ -30,9 +36,9 @@ namespace BaseArquitecturaAPI.Controllers
 
         // GET api/<controller>/5
         [HttpPost()]
-        public async Task<IActionResult> PostCreateTest([FromBody] CreateTestModelJson body)
+        public async Task<IActionResult> PostCreateTest()
         {
-            //var response = await Mediator.Send(new CreateTestCommand { Descripcion = body.Description, Id = body.Id});
+            await _service.SendEmail("victorabud11@gmail.com", "Prueba desde API", "Prueba1");
 
             return Ok();
         }

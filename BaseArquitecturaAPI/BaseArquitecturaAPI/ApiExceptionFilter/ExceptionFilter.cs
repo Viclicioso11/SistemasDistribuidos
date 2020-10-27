@@ -25,6 +25,10 @@ namespace BaseArquitecturaAPI.ApiExceptionFilter
             {
                 statusCode = HttpStatusCode.Conflict;
             }
+            if(context.Exception is ErrorException)
+            {
+                statusCode = HttpStatusCode.InternalServerError;
+            }
 
 
             context.HttpContext.Response.ContentType = "application/json";

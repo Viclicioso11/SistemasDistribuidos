@@ -76,3 +76,5 @@ C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\Ba
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.csproj.CoreCompileInputs.cache
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\obj\Debug\netcoreapp3.1\BaseArquitecturaAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\Users\Edgard Abud\Documents\UCA\SISTEMAS DISTRIBUIDOS\SistemasDistribuidos\BaseArquitecturaAPI\BaseArquitecturaAPI\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll

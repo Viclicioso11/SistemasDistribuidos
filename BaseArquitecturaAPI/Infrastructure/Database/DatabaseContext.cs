@@ -43,7 +43,9 @@ namespace Infrastructure.Database
                 .ApplyConfiguration(new StateConfigurationBuilder())
                 .ApplyConfiguration(new CountryConfigurationBuilder())
                 .ApplyConfiguration(new VotationAuditConfiguration())
-                .ApplyConfiguration(new VotationDetailsConfigurationBuilder());
+                .ApplyConfiguration(new VotationDetailsConfigurationBuilder())
+                .ApplyConfiguration(new TwoFactorAuthenticationConfigurationBuilder());
+
         }
 
 
@@ -78,6 +80,8 @@ namespace Infrastructure.Database
         public DbSet<VoteAudit> VoteAudits { get; set; }
 
         public DbSet<UserAudit> UserAudits { get; set; }
+
+        public DbSet<TwoFactorAuthentication> TwoFactorAuthentications { get; set; }
 
 
 

@@ -9,6 +9,9 @@ namespace BaseArquitecturaAPI.Models
     [DataContract]
     public class UserModelJson
     {
+        [DataMember(Name = "id")]
+        public int UserId { get; set; }
+
         [DataMember(Name = "identification")]
         public string Identification { get; set; }
 
@@ -30,7 +33,5 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "password")]
         public string Password { get; set; }
 
-        [DataMember(Name = "status")]
-        public bool Status { get; set; }
     }
 }

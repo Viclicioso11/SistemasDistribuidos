@@ -58,7 +58,7 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnName("Email")
                 .HasMaxLength(20)
                 .IsRequired()
-                .HasColumnType("varchar(20)");
+                .HasColumnType("varchar(50)");
 
             builder
                 .Property(v => v.Identification)

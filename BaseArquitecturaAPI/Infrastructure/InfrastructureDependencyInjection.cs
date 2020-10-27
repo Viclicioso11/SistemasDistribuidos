@@ -18,6 +18,8 @@ namespace Infrastructure
         public static IServiceCollection AddInfrastructureDependencyInjection (this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IVotationService, VotationService>();
+            services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<IUserService, UserService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(configuration.GetConnectionString("votationDb")));

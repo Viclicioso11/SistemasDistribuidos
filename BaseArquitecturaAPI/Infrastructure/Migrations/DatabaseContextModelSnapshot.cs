@@ -305,6 +305,46 @@ namespace Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Domain.Entities.TwoFactorAuthentication", b =>
+                {
+                    b.Property<int>("TwoFactorAuthenticationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Attempts")
+                        .HasColumnName("Attempts")
+                        .HasColumnType("int")
+                        .HasMaxLength(2);
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnName("ExpirationDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("OneTimePassword")
+                        .IsRequired()
+                        .HasColumnName("OneTimePassword")
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<int>("Status")
+                        .HasColumnName("Status")
+                        .HasColumnType("int")
+                        .HasMaxLength(2);
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TwoFactorAuthenticationId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TwoFactorAuthentications");
+                });
+
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -318,7 +358,7 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnName("Email")
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("varchar(50)")
                         .HasMaxLength(20);
 
                     b.Property<string>("FirstName")
@@ -701,6 +741,16 @@ namespace Infrastructure.Migrations
                         .WithMany("States")
                         .HasForeignKey("CountryId")
                         .HasConstraintName("FkCountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Entities.TwoFactorAuthentication", b =>
+                {
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany("TwoFactorAuthentications")
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("FkTFAUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

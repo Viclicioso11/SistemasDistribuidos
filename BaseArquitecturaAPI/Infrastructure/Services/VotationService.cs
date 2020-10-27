@@ -23,9 +23,6 @@ namespace Infrastructure.Services
 
         public async Task<Votation> GetVotationById(int id)
         {
-            //just for the info in the table
-            //var votation = await _context.Votations.SingleOrDefaultAsync(v => v.VotationId == id);
-
             //another way
             var votation = (from v in _context.Votations
                            join c in _context.Cities
