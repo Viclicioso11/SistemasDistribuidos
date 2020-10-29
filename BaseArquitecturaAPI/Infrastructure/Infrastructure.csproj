@@ -27,6 +27,8 @@
     <Compile Remove="Migrations\20200924011612_UpdatingEntities.Designer.cs" />
     <Compile Remove="Migrations\20200924015659_VotationInfoProves.cs" />
     <Compile Remove="Migrations\20200924015659_VotationInfoProves.Designer.cs" />
+    <Compile Remove="Migrations\20201029050534_agregandoPaisesCiudades.cs" />
+    <Compile Remove="Migrations\20201029050534_agregandoPaisesCiudades.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
