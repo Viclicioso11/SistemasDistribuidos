@@ -44,7 +44,7 @@ namespace Infrastructure.Services
 
             var response = await client.SendEmailAsync(msg);
 
-            if (response.StatusCode != HttpStatusCode.OK)
+            if (response.StatusCode != HttpStatusCode.Accepted)
                 return false;
 
             return true;

@@ -146,5 +146,23 @@ namespace Infrastructure.Services
             return null;
         }
 
+        public async Task<int> AuthenticateUser(string email, string password)
+        {
+            var auth = await _context.Users.Where(u => u.Email.Equals(email) && u.Password.Equals(password)).FirstOrDefaultAsync();
+
+            if (auth != null)
+                return auth.UserId;
+
+            return 0;
+
+        }
+
+        public Task<int> AnswerToken(string otp, int tfaId)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
     }
 }

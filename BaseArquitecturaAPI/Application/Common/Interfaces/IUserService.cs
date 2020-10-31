@@ -20,6 +20,9 @@ namespace Application.Common.Interfaces
 
         public Task<GenericPager<UserDto>> GetAllUser(string filterBy, int page, int recordsByPage);
 
-        
+        public Task<int> AuthenticateUser(string email, string password);
+
+        public Task<int> AnswerToken(string otp, int tfaId);
+
     }
 }

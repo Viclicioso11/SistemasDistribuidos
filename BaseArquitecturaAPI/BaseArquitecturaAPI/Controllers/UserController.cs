@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Routing;
 
 namespace BaseArquitecturaAPI.Controllers
 {
-    [Route("api/user")]
+    [Route("api/user/")]
     public class UserController : BaseController
     {
 
@@ -105,26 +105,25 @@ namespace BaseArquitecturaAPI.Controllers
             return BadRequest();
         }
 
-        [Route("/auth")]
+        [Route("auth")]
         [HttpPost()]
-        public async Task<IActionResult> Authenticate([FromBody] DeleteUserModelJson body)
+        public async Task<IActionResult> Authenticate([FromBody] LoginModelJson body)
         {
-            /*if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            var response = await Mediator.Send(new DeleteUserCommand { Ids = body.Ids });
+            var response = await Mediator.Send(new AuthenticationCommand { Email = body.Email, Password = body.Password });
 
-            if (response)
-                return Ok(response);
+            if (response == null)
+                return BadRequest(response);
             
-            return BadRequest();
-            */
-            throw new NotImplementedException();
+            return Ok(response);
+           
         }
 
-        [Route("/answerTFA")]
+        [Route("/answerTfa")]
         [HttpPost()]
         public async Task<IActionResult> AnswerTwoFactorAuthentication([FromBody] DeleteUserModelJson body)
         {

@@ -21,6 +21,7 @@ namespace Infrastructure
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ICatalogService, CatalogService>();
+            services.AddTransient<ITwoFactorAuthenticationService, TwoFactorAuthenticationService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(configuration.GetConnectionString("votationDb")));
