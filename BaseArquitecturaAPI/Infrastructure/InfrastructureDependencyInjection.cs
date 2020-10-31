@@ -20,6 +20,7 @@ namespace Infrastructure
             services.AddTransient<IVotationService, VotationService>();
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ICatalogService, CatalogService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(configuration.GetConnectionString("votationDb")));

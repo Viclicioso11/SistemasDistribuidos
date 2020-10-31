@@ -23,8 +23,6 @@ namespace Application.UserActions.Dtos
 
         public string Email { get; set; }
 
-        public string Password { get; set; }
-
         public bool Status { get; set; }
         public void Mapping(Profile profile)
         {

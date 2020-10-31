@@ -26,6 +26,21 @@ namespace BaseArquitecturaAPI.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet()]
+        public async Task<IActionResult> GetAllUsers(int page =1 , string filter = "", int records = 10)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var users = await Mediator.Send(new GetAllUsersQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
+
+            if (users == null)
+                return NotFound();
+
+            return Ok(users);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {

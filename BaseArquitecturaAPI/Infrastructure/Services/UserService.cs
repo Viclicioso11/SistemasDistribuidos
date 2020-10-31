@@ -1,4 +1,6 @@
 ﻿using Application.Common.Interfaces;
+using Application.Common.Pager;
+using Application.UserActions.Dtos;
 using Domain.Entities;
 using Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
@@ -47,6 +49,71 @@ namespace Infrastructure.Services
                 return false;
 
             return true;
+        }
+
+        public async Task<GenericPager<UserDto>> GetAllUser(string filterBy, int page, int recordsByPage)
+        {
+ 
+            var information = new GenericPager<UserDto>();
+
+            information.ActualPage = page;
+            information.RecordsByPage = recordsByPage;        
+            
+
+            if (string.IsNullOrEmpty(filterBy))
+            {
+                information.Results = await _context.Users
+                    .Skip((page - 1) * recordsByPage)
+                    .Take(recordsByPage)
+                    .Where(u => u.Status == true)
+                    .Select(u => new UserDto
+                    {
+                        Email = u.Email,
+                        FirstName = u.FirstName,
+                        Identification = u.Identification,
+                        LastName = u.LastName,
+                        MiddleName = u.MiddleName,
+                        Status = u.Status,
+                        Surname = u.Surname,
+                        UserId = u.UserId
+
+                    })
+                    .ToListAsync();
+
+                information.TotalRecords = _context.Users.Count();
+                information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
+            }
+            else
+            {
+                
+                information.Results = await _context.Users
+                    .Skip((page - 1) * recordsByPage)
+                    .Take(recordsByPage)
+                    .Where(u => (u.FirstName.Contains(filterBy) ||
+                            u.LastName.Contains(filterBy) ||
+                            u.Identification.Contains(filterBy) ||
+                            u.MiddleName.Contains(filterBy) ||
+                            u.Surname.Contains(filterBy)) &&
+                            u.Status == true)
+                    .Select(u => new UserDto
+                    {
+                        Email = u.Email,
+                        FirstName = u.FirstName,
+                        Identification = u.Identification,
+                        LastName = u.LastName,
+                        MiddleName = u.MiddleName,
+                        Status = u.Status,
+                        Surname = u.Surname,
+                        UserId = u.UserId
+                    })
+                    .ToListAsync();
+
+                information.TotalRecords = information.Results.Count();
+                information.Results = information.Results.Skip((page - 1) * recordsByPage).Take(recordsByPage).ToList(); // para la paginacion
+                information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
+            }
+
+            return information;
         }
 
         public async Task<User> GetUserById(int userId)
