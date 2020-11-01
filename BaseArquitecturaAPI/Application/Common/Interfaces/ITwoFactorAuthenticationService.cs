@@ -1,4 +1,5 @@
 ﻿using Application.UserActions.Dtos;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,8 @@ namespace Application.Common.Interfaces
 {
     public interface ITwoFactorAuthenticationService
     {
-        Task<AuthenticationDto> CreateTwoFactorAuthentication(int userId);
+        Task<TwoFactorAuthentication> CreateTwoFactorAuthentication(int userId);
+
+        Task<TwoFactorAuthenticationDto> ValidateTwoFactorAuthentication(string otp, int tfaId, int userId);
     }
 }

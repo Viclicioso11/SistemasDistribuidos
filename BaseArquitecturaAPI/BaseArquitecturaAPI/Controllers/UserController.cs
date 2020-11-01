@@ -123,23 +123,21 @@ namespace BaseArquitecturaAPI.Controllers
            
         }
 
-        [Route("/answerTfa")]
+        [Route("answerTfa")]
         [HttpPost()]
-        public async Task<IActionResult> AnswerTwoFactorAuthentication([FromBody] DeleteUserModelJson body)
+        public async Task<IActionResult> AnswerTwoFactorAuthentication([FromBody] AnswerTwoFactorAuthenticationModelJson body)
         {
-            /*if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            var response = await Mediator.Send(new DeleteUserCommand { Ids = body.Ids });
+            var response = await Mediator.Send(new AnswerTwoFactorAuthenticatonCommand { UserId = body.UserId, AuthenticationId = body.AuthenticationId, OneTimePassword = body.OneTimePassword });
 
-            if (response)
+            if (response != null)
                 return Ok(response);
-            
+
             return BadRequest();
-            */
-            throw new NotImplementedException();
         }
     }
 }

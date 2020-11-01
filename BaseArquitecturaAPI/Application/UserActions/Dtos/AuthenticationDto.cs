@@ -8,6 +8,7 @@ namespace Application.UserActions.Dtos
     {
         public int AuthenticationId { get; set; }
 
-        public string OneTimePassword { get; set; }
+        public int UserId { get; set; }
+
     }
 }

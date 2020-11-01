@@ -35,18 +35,18 @@ namespace Application.UserActions.Handlers
 
             //si las credenciales son correctas, se envia el correo y se guarda en tfa
 
-            var result = await _tfaService.CreateTwoFactorAuthentication(userId);
+            var tfa = await _tfaService.CreateTwoFactorAuthentication(userId);
 
-            if (result == null)
+            if (tfa == null)
                 throw new ErrorException("01", "Error tratando de guardar TFA");
 
             //enviamos correo
-            var sended = await _emailService.SendEmail(request.Email, "Correo de mensaje de confirmación", result.OneTimePassword);
+            var sended = await _emailService.SendEmail(request.Email, "Correo de mensaje de confirmación", tfa.OneTimePassword);
 
             if(!sended)
                 throw new ErrorException("01", "Error intentando enviar el correo");
 
-            return result;
+            return new AuthenticationDto { AuthenticationId = tfa.TwoFactorAuthenticationId, UserId = tfa.UserId};
         }
     }
 }
