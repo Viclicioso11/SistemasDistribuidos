@@ -148,7 +148,7 @@ namespace Infrastructure.Services
 
         public async Task<int> AuthenticateUser(string email, string password)
         {
-            var auth = await _context.Users.Where(u => u.Email.Equals(email) && u.Password.Equals(password)).FirstOrDefaultAsync();
+            var auth = await _context.Users.Where(u => u.Email.Equals(email) && u.Password.Equals(password) && u.Status == true).FirstOrDefaultAsync();
 
             if (auth != null)
                 return auth.UserId;

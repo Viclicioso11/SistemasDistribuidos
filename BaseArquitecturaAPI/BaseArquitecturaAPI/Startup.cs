@@ -37,6 +37,8 @@ namespace BaseArquitecturaAPI
 
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddCors();
+
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
@@ -53,6 +55,11 @@ namespace BaseArquitecturaAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseAuthorization();
 

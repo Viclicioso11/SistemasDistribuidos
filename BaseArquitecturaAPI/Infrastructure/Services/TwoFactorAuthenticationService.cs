@@ -97,7 +97,7 @@ namespace Infrastructure.Services
                 {
                     Attempts = tfa.Attempts,
                     TwoFactorAuthenticationId = tfaId,
-                    Message = "Intentos permitidos alcanzados",
+                    Message = tfa.Attempts == 0 ? "Intentos permitidos alcanzados" : $"{tfa.Attempts} intentos restantes",
                     UserId = userId,
                     Validated = false
                 };
