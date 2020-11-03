@@ -14,6 +14,10 @@ namespace Application.Common.Pager
 
         public int TotalPages { get; set; } 
 
+        public bool Next { get; set; }
+
+        public bool Previous { get; set; }
+
         public  List<T> Results { get; set; }
     }
 }

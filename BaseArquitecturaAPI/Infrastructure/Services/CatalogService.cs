@@ -48,6 +48,9 @@ namespace Infrastructure.Services
 
                 information.TotalRecords = _context.Cities.Count();
                 information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
+
+                information.Next = page < information.TotalPages;
+                information.Previous = page > 1;
             }
             else
             {
@@ -67,10 +70,13 @@ namespace Infrastructure.Services
                     })
                     .ToListAsync();
 
+
                 information.TotalRecords = information.Results.Count();
                 information.Results = information.Results.Skip((page - 1) * recordsByPage).Take(recordsByPage).ToList(); // para la paginacion
                 information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
 
+                information.Next = page < information.TotalPages;
+                information.Previous = page > 1;
             }
 
             return information;
@@ -100,6 +106,9 @@ namespace Infrastructure.Services
 
                 information.TotalRecords = _context.Countries.Count();
                 information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
+
+                information.Next = page < information.TotalPages;
+                information.Previous = page > 1;
             }
             else
             {
@@ -118,6 +127,8 @@ namespace Infrastructure.Services
                 information.Results = information.Results.Skip((page - 1) * recordsByPage).Take(recordsByPage).ToList(); // para la paginacion
                 information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
 
+                information.Next = page < information.TotalPages;
+                information.Previous = page > 1;
             }
 
             return information;
@@ -150,6 +161,9 @@ namespace Infrastructure.Services
 
                 information.TotalRecords = _context.States.Count();
                 information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
+
+                information.Next = page < information.TotalPages;
+                information.Previous = page > 1;
             }
             else
             {
@@ -172,6 +186,8 @@ namespace Infrastructure.Services
                 information.Results = information.Results.Skip((page - 1) * recordsByPage).Take(recordsByPage).ToList(); // para la paginacion
                 information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
 
+                information.Next = page < information.TotalPages;
+                information.Previous = page > 1;
             }
 
             return information;
