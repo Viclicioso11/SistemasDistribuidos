@@ -12,7 +12,7 @@ namespace BaseArquitecturaAPI.Models
     {
         
         [DataMember(Name = "votation_id")]
-        public int VotationId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [DataMember(Name = "votation_type_id")]

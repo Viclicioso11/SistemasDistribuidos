@@ -6,7 +6,7 @@ namespace Application.UserActions.Dtos
 {
     public class AuthenticationDto
     {
-        public int AuthenticationId { get; set; }
+        public int Id { get; set; }
 
         public int UserId { get; set; }
 

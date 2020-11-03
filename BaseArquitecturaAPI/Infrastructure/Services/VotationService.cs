@@ -26,13 +26,13 @@ namespace Infrastructure.Services
             //another way
             var votation = (from v in _context.Votations
                            join c in _context.Cities
-                           on v.CityId equals c.CityId
+                           on v.CityId equals c.Id
                            join t in _context.VotationTypes
-                           on v.VotationTypeId equals t.VotationTypeId
-                           where v.VotationId == id
+                           on v.VotationTypeId equals t.Id
+                           where v.Id == id
                            select new Votation
                            {
-                               VotationId = v.VotationId,
+                               Id = v.Id,
                                VotationDescription = v.VotationDescription,
                                VotationType = t,
                                City = c,

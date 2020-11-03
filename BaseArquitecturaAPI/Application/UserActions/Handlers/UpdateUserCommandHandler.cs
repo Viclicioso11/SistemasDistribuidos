@@ -26,7 +26,7 @@ namespace Application.UserActions.Handlers
             var result = await _service.UpdateUser(request.User);
 
             if (result == null)
-                throw new ErrorException("02", $"Error tratando de actualizar cliente con Id {request.User.UserId}");
+                throw new ErrorException("02", $"Error tratando de actualizar cliente con Id {request.User.Id}");
 
             return _mapper.Map<UserDto>(request.User);
         }

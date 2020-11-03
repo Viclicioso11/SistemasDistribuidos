@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class TwoFactorAuthentication
     {
-        public int TwoFactorAuthenticationId { get; set; }
+        public int Id { get; set; }
 
         public string OneTimePassword { get; set; }
 

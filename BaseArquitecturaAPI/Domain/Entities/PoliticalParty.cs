@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class PoliticalParty
     {
-        public int PoliticalPartyId { get; set; }
+        public int Id { get; set; }
 
         public string PoliticalPartyName { get; set; }
 

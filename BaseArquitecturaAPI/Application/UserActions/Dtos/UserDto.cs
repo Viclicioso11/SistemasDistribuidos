@@ -9,17 +9,13 @@ namespace Application.UserActions.Dtos
 {
     public class UserDto : IMapFrom<User>
     {
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         public string Identification { get; set; }
 
-        public string FirstName { get; set; }
+        public string Names { get; set; }
 
-        public string MiddleName { get; set; }
-
-        public string LastName { get; set; }
-
-        public string Surname { get; set; }
+        public string LastNames { get; set; }
 
         public string Email { get; set; }
 

@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class Option
     {
-        public int OptionId { get; set; }
+        public int Id { get; set; }
 
         public string OptionName { get; set; }
 

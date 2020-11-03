@@ -48,7 +48,7 @@ namespace Infrastructure.Services
         public async Task<TwoFactorAuthenticationDto> ValidateTwoFactorAuthentication(string otp, int tfaId, int userId)
         {
 
-            var tfa = await _context.TwoFactorAuthentications.Where(t => (t.TwoFactorAuthenticationId == tfaId && t.UserId == userId) && (t.Status == 1)).FirstOrDefaultAsync();
+            var tfa = await _context.TwoFactorAuthentications.Where(t => (t.Id == tfaId && t.UserId == userId) && (t.Status == 1)).FirstOrDefaultAsync();
 
             // si no se encontró el registro
             if (tfa == null)
@@ -70,7 +70,7 @@ namespace Infrastructure.Services
                 return new TwoFactorAuthenticationDto
                 {
                     Attempts = 0,
-                    TwoFactorAuthenticationId = tfaId,
+                    Id = tfaId,
                     Message = "Token expirado",
                     UserId = userId,
                     Validated = false
@@ -96,7 +96,7 @@ namespace Infrastructure.Services
                 return new TwoFactorAuthenticationDto
                 {
                     Attempts = tfa.Attempts,
-                    TwoFactorAuthenticationId = tfaId,
+                    Id = tfaId,
                     Message = tfa.Attempts == 0 ? "Intentos permitidos alcanzados" : $"{tfa.Attempts} intentos restantes",
                     UserId = userId,
                     Validated = false
@@ -117,7 +117,7 @@ namespace Infrastructure.Services
             return new TwoFactorAuthenticationDto
             {
                 Attempts = tfa.Attempts,
-                TwoFactorAuthenticationId = tfaId,
+                Id = tfaId,
                 Message = "Validación correcta",
                 UserId = userId,
                 Validated = true

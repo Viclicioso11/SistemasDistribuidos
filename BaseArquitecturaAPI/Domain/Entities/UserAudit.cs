@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class UserAudit
     {
-        public int UserAuditId { get; set; }
+        public int Id { get; set; }
 
         public DateTime? CreatedAt { get; set; }
 

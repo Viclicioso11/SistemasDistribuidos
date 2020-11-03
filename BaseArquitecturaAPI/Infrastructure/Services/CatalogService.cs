@@ -33,13 +33,13 @@ namespace Infrastructure.Services
                     ( 
                     from c in _context.Cities
                     join s in _context.States
-                    on c.StateId equals s.StateId
+                    on c.StateId equals s.Id
                     select new CityDto
                     {
                         CityCode = c.CityCode,
-                        CityId = c.CityId,
+                        CityId = c.Id,
                         CityName = c.CityName,
-                        StateId = s.StateId,
+                        StateId = s.Id,
                         StateName = s.StateName
                     })
                     .Skip((page - 1) * recordsByPage)
@@ -55,14 +55,14 @@ namespace Infrastructure.Services
                     (
                     from c in _context.Cities
                     join s in _context.States
-                    on c.StateId equals s.StateId
+                    on c.StateId equals s.Id
                     where c.CityName.Contains(filterBy) || c.CityCode.Contains(filterBy)
                     select new CityDto
                     {
                         CityCode = c.CityCode,
-                        CityId = c.CityId,
+                        CityId = c.Id,
                         CityName = c.CityName,
-                        StateId = s.StateId,
+                        StateId = s.Id,
                         StateName = s.StateName
                     })
                     .ToListAsync();
@@ -91,7 +91,7 @@ namespace Infrastructure.Services
                     from c in _context.Countries
                     select new CountryDto
                     {
-                        CountryId = c.CountryId,
+                        CountryId = c.Id,
                         CountryName = c.CountryName
                     })
                     .Skip((page - 1) * recordsByPage)
@@ -109,7 +109,7 @@ namespace Infrastructure.Services
                     where c.CountryName.Contains(filterBy)
                     select new CountryDto
                     {
-                        CountryId = c.CountryId,
+                        CountryId = c.Id,
                         CountryName = c.CountryName
                     })
                     .ToListAsync();
@@ -136,12 +136,12 @@ namespace Infrastructure.Services
                     (
                     from s in _context.States
                     join c in _context.Countries
-                    on s.CountryId equals c.CountryId
+                    on s.CountryId equals c.Id
                     select new StateDto
                     {
                         StateName = s.StateName,
-                        StateId = s.StateId,
-                        CountryId = c.CountryId,
+                        StateId = s.Id,
+                        CountryId = c.Id,
                         CountryName = c.CountryName
                     })
                     .Skip((page - 1) * recordsByPage)
@@ -157,13 +157,13 @@ namespace Infrastructure.Services
                     (
                     from s in _context.States
                     join c in _context.Countries
-                    on s.CountryId equals c.CountryId
+                    on s.CountryId equals c.Id
                     where s.StateName.Contains(filterBy)
                     select new StateDto
                     {
                         StateName = s.StateName,
-                        StateId = s.StateId,
-                        CountryId = c.CountryId,
+                        StateId = s.Id,
+                        CountryId = c.Id,
                         CountryName = c.CountryName
                     })
                     .ToListAsync();
@@ -181,14 +181,14 @@ namespace Infrastructure.Services
         {
             var city = await (from c in _context.Cities
                               join s in _context.States
-                              on c.StateId equals s.StateId
-                              where c.CityId == cityId
+                              on c.StateId equals s.Id
+                              where c.Id == cityId
                               select new CityDto
                               {
                                   CityCode = c.CityCode,
-                                  CityId = c.CityId,
+                                  CityId = c.Id,
                                   CityName = c.CityName,
-                                  StateId = s.StateId,
+                                  StateId = s.Id,
                                   StateName = s.StateName
 
                               }).FirstOrDefaultAsync();
@@ -202,10 +202,10 @@ namespace Infrastructure.Services
         public async Task<CountryDto> GetCountryById(int countryId)
         {
             var country = await (from c in _context.Countries
-                                 where c.CountryId == countryId
+                                 where c.Id == countryId
                                  select new CountryDto
                                  {
-                                     CountryId = c.CountryId,
+                                     CountryId = c.Id,
                                      CountryName = c.CountryName
 
                                  }).FirstOrDefaultAsync();
@@ -215,7 +215,7 @@ namespace Infrastructure.Services
                                  select new StateDto
                                  {
                                      StateName = s.StateName,
-                                     StateId = s.StateId,
+                                     StateId = s.Id,
                                      CountryId = country.CountryId,
                                      CountryName = country.CountryName
                                  };
@@ -229,14 +229,14 @@ namespace Infrastructure.Services
         public async Task<StateDto> GetStateById(int stateId)
         {
             var state = await(from s in _context.States
-                              where s.StateId == stateId
+                              where s.Id == stateId
                               join c in _context.Countries
-                              on s.CountryId equals c.CountryId
+                              on s.CountryId equals c.Id
                               select new StateDto
                                 {
-                                    StateId = s.StateId,
+                                    StateId = s.Id,
                                     StateName = s.StateName,
-                                    CountryId = c.CountryId,
+                                    CountryId = c.Id,
                                     CountryName = c.CountryName
 
                                 }).FirstOrDefaultAsync();
@@ -250,7 +250,7 @@ namespace Infrastructure.Services
                                    CityCode = c.CityCode,
                                    CityName = c.CityName,
                                    StateName = state.StateName,
-                                   CityId = c.CityId,
+                                   CityId = c.Id,
                                    StateId = state.StateId
                                };
 

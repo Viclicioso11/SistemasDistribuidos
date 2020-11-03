@@ -12,7 +12,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<VotationType> builder)
         {
             builder
-              .Property(v => v.VotationTypeId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)
@@ -33,7 +33,7 @@ namespace Infrastructure.Database.Configurations
             builder
                 .HasData(new VotationType
                 {
-                    VotationTypeId = 1,
+                    Id = 1,
                     VotationTypeName = "Alcaldía",
                     VotationTypeDescription = "Votaciones municipales"
                 });

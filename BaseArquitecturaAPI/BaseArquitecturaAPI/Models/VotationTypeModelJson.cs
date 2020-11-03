@@ -12,7 +12,7 @@ namespace BaseArquitecturaAPI.Models
     public class VotationTypeModelJson
     {
         [DataMember(Name = "votation_type_id")]
-        public int VotationTypeId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [DataMember(Name = "votation_type_id")]

@@ -69,13 +69,11 @@ namespace Infrastructure.Services
                     .Select(u => new UserDto
                     {
                         Email = u.Email,
-                        FirstName = u.FirstName,
+                        Names = u.Names,
                         Identification = u.Identification,
-                        LastName = u.LastName,
-                        MiddleName = u.MiddleName,
+                        LastNames = u.LastNames,
                         Status = u.Status,
-                        Surname = u.Surname,
-                        UserId = u.UserId
+                        Id = u.Id
 
                     })
                     .ToListAsync();
@@ -89,22 +87,18 @@ namespace Infrastructure.Services
                 information.Results = await _context.Users
                     .Skip((page - 1) * recordsByPage)
                     .Take(recordsByPage)
-                    .Where(u => (u.FirstName.Contains(filterBy) ||
-                            u.LastName.Contains(filterBy) ||
-                            u.Identification.Contains(filterBy) ||
-                            u.MiddleName.Contains(filterBy) ||
-                            u.Surname.Contains(filterBy)) &&
+                    .Where(u => (u.Names.Contains(filterBy) ||
+                            u.LastNames.Contains(filterBy) ||
+                            u.Identification.Contains(filterBy)) &&
                             u.Status == true)
                     .Select(u => new UserDto
                     {
                         Email = u.Email,
-                        FirstName = u.FirstName,
+                        Names = u.Names,
                         Identification = u.Identification,
-                        LastName = u.LastName,
-                        MiddleName = u.MiddleName,
+                        LastNames = u.LastNames,
                         Status = u.Status,
-                        Surname = u.Surname,
-                        UserId = u.UserId
+                        Id = u.Id
                     })
                     .ToListAsync();
 
@@ -118,7 +112,7 @@ namespace Infrastructure.Services
 
         public async Task<User> GetUserById(int userId)
         {
-           var user = await _context.Users.Where(u => u.Status == true && u.UserId == userId).FirstOrDefaultAsync();
+           var user = await _context.Users.Where(u => u.Status == true && u.Id == userId).FirstOrDefaultAsync();
 
             if (user != null)
                 return user;
@@ -128,12 +122,10 @@ namespace Infrastructure.Services
 
         public async Task<User> UpdateUser(User user)
         {
-            var userToEdit = _context.Users.Find(user.UserId);
+            var userToEdit = _context.Users.Find(user.Id);
 
-            userToEdit.FirstName = user.FirstName;
-            userToEdit.LastName = user.LastName;
-            userToEdit.MiddleName = user.MiddleName;
-            userToEdit.Surname = user.Surname;
+            userToEdit.Names = user.Names;
+            userToEdit.LastNames = user.LastNames;
             userToEdit.Email = user.Email;
 
             _context.Users.Update(userToEdit);
@@ -151,7 +143,7 @@ namespace Infrastructure.Services
             var auth = await _context.Users.Where(u => u.Email.Equals(email) && u.Password.Equals(password) && u.Status == true).FirstOrDefaultAsync();
 
             if (auth != null)
-                return auth.UserId;
+                return auth.Id;
 
             return 0;
 

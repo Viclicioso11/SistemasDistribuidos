@@ -12,7 +12,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<VoteAudit> builder)
         {
             builder
-              .Property(v => v.VoteAuditId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)

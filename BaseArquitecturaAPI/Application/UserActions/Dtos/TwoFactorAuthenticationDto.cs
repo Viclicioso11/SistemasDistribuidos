@@ -10,9 +10,11 @@ namespace Application.UserActions.Dtos
 
         public string Message { get; set; }
 
-        public int TwoFactorAuthenticationId { get; set; }
+        public int Id { get; set; }
 
         public int UserId { get; set; }
+
+        public string Token { get; set; }
 
         public bool Validated { get; set; } 
     }

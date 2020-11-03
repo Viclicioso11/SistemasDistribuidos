@@ -10,7 +10,7 @@ namespace BaseArquitecturaAPI.Models
     public class AnswerTwoFactorAuthenticationModelJson
     {
         [DataMember(Name = "authentication_id")]
-        public int AuthenticationId { get; set; }
+        public int Id { get; set; }
 
         [DataMember(Name = "one_time_password")]
         public string OneTimePassword { get; set; }

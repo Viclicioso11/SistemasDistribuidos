@@ -10,22 +10,16 @@ namespace BaseArquitecturaAPI.Models
     public class UserModelJson
     {
         [DataMember(Name = "id")]
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         [DataMember(Name = "identification")]
         public string Identification { get; set; }
 
-        [DataMember(Name = "first_name")]
-        public string FirstName { get; set; }
+        [DataMember(Name = "names")]
+        public string Names { get; set; }
 
-        [DataMember(Name = "middlename")]
-        public string MiddleName { get; set; }
-
-        [DataMember(Name = "last_name")]
-        public string LastName { get; set; }
-
-        [DataMember(Name = "surname")]
-        public string Surname { get; set; }
+        [DataMember(Name = "last_names")]
+        public string LastNames { get; set; }
 
         [DataMember(Name = "email")]
         public string Email { get; set; }

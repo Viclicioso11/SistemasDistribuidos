@@ -17,17 +17,11 @@ namespace Application.UserActions.Validators
             RuleFor(c => c.User.Identification)
                 .MaximumLength(20);
 
-            RuleFor(c => c.User.FirstName)
-                .MaximumLength(15);
+            RuleFor(c => c.User.Names)
+                .MaximumLength(50);
 
-            RuleFor(c => c.User.MiddleName)
-                .MaximumLength(15);
-
-            RuleFor(c => c.User.LastName)
-                .MaximumLength(15);
-
-            RuleFor(c => c.User.Surname)
-                .MaximumLength(20);
+            RuleFor(c => c.User.LastNames)
+                .MaximumLength(50);
 
             RuleFor(c => c.User.Password)
                 .MaximumLength(20);

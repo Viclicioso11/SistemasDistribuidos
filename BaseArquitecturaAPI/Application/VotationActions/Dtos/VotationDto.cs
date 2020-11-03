@@ -28,7 +28,7 @@ namespace Application.VotationActions.Dtos
         public void Mapping(Profile profile)
         {   
             profile.CreateMap<Votation, VotationDto>()
-                .ForMember(vt => vt.VotationId, opt => opt.MapFrom(v => v.VotationId))
+                .ForMember(vt => vt.VotationId, opt => opt.MapFrom(v => v.Id))
                 .ForMember(vt => vt.VotationDescription, opt => opt.MapFrom(v => v.VotationDescription))
                 .ForMember(vt => vt.VotationEndDate, opt => opt.MapFrom(v => v.VotationEndDate))
                 .ForMember(vt => vt.VotationStartDate, opt => opt.MapFrom(v => v.VotationStartDate))

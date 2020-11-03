@@ -64,7 +64,7 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
-            body.UserId = id;
+            body.Id = id;
             var response = await Mediator.Send(new UpdateUserCommand { User = _mapper.Map<User>(body) });
 
             if (response != null)
@@ -132,7 +132,7 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
-            var response = await Mediator.Send(new AnswerTwoFactorAuthenticatonCommand { UserId = body.UserId, AuthenticationId = body.AuthenticationId, OneTimePassword = body.OneTimePassword });
+            var response = await Mediator.Send(new AnswerTwoFactorAuthenticatonCommand { UserId = body.UserId, AuthenticationId = body.Id, OneTimePassword = body.OneTimePassword });
 
             if (response != null)
                 return Ok(response);

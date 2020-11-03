@@ -11,7 +11,7 @@ namespace BaseArquitecturaAPI.Models
     public class CandidateModelJson
     {
         [DataMember(Name = "candidate_id")]
-        public int CandidateId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [DataMember(Name = "political_party_id")]

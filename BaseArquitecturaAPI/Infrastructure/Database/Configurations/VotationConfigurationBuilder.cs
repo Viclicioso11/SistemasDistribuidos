@@ -13,7 +13,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<Votation> builder)
         {
             builder
-              .Property(v => v.VotationId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)
@@ -54,7 +54,7 @@ namespace Infrastructure.Database.Configurations
             builder
                 .HasData(new Votation
                 {
-                    VotationId = 1,
+                    Id = 1,
                     VotationDescription = "Votacion de pruebas",
                     VotationEndDate = new DateTime(2020, 11, 2),
                     VotationStartDate = new DateTime(2020, 09, 29),

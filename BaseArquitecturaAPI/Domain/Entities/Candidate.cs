@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class Candidate
     {
-        public int CandidateId { get; set; }
+        public int Id { get; set; }
 
         public string FirstName { get; set; }
 

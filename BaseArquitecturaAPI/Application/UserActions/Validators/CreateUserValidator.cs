@@ -21,23 +21,15 @@ namespace Application.UserActions.Validators
                 .NotNull()
                 .MaximumLength(20);
 
-            RuleFor(c => c.User.FirstName)
+            RuleFor(c => c.User.Names)
                 .NotEmpty()
                 .NotNull()
-                .MaximumLength(15);
+                .MaximumLength(50);
 
-            RuleFor(c => c.User.MiddleName)
-                .MaximumLength(15);
-
-            RuleFor(c => c.User.LastName)
+            RuleFor(c => c.User.LastNames)
                 .NotEmpty()
                 .NotNull()
-                .MaximumLength(15);
-
-            RuleFor(c => c.User.Surname)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(20);
+                .MaximumLength(50);
 
             RuleFor(c => c.User.Password)
                 .NotEmpty()

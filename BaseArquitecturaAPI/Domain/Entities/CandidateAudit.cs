@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class CandidateAudit
     {
-        public int CandidateAuditId { get; set; }
+        public int Id { get; set; }
 
         public int? ChangesMadeByUserId { get; set; }
 

@@ -12,7 +12,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<PoliticalParty> builder)
         {
             builder
-              .Property(v => v.PoliticalPartyId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)

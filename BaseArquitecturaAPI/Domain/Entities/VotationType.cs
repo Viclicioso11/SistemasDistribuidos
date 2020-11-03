@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class VotationType
     {
-        public int VotationTypeId { get; set; }
+        public int Id { get; set; }
 
         public string VotationTypeName { get; set; }
 

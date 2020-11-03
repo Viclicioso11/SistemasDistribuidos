@@ -46,7 +46,7 @@ namespace Application.UserActions.Handlers
             if(!sended)
                 throw new ErrorException("01", "Error intentando enviar el correo");
 
-            return new AuthenticationDto { AuthenticationId = tfa.TwoFactorAuthenticationId, UserId = tfa.UserId};
+            return new AuthenticationDto { Id = tfa.Id, UserId = tfa.UserId};
         }
     }
 }
