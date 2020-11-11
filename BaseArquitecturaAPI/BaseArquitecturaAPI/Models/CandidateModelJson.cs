@@ -31,7 +31,5 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "surnname")]
         public string Surname { get; set; }
 
-        [DataMember(Name = "status")]
-        public bool Status { get; set; }
     }
 }

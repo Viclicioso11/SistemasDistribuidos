@@ -227,7 +227,7 @@ namespace Infrastructure.Services
                                  }).FirstOrDefaultAsync();
             if(country != null)
             {
-                country.States = from s in _context.States
+                country.States = from s in _context.States where s.CountryId == countryId
                                  select new StateDto
                                  {
                                      StateName = s.StateName,
