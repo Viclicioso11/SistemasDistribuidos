@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UBZwYR0HIC7+Cp4bL3iwYvd2LusQKZcgcawZeiUO3divR58IilgtW1ySZEXqSa1jI0AY6hr+bhbITrlJfxG2rQ==",
+  "dgSpecHash": "kkwVwkcHCAHeiJXGzZCzt3+8TxIyth69eTJeXdWDPNHgaOuDSdtHX3Nb/ioI6iod1KwOIgBXZG+NvTtu9FVk2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.2.0\\fluentvalidation.dependencyinjectionextensions.9.2.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.1.0\\mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.8\\microsoft.aspnetcore.jsonpatch.3.1.8.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.8\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.8.nupkg.sha512",
     "C:\\Users\\Edgard Abud\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

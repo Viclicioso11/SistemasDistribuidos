@@ -57,7 +57,6 @@ namespace Infrastructure.Services
                         PoliticalPartyId = c.PoliticalPartyId,
                         PoliticalPartyName = p.PoliticalPartyName,
                         Id = c.Id,
-                        Status = c.Status
                     })
                     .Skip((page - 1) * recordsByPage)
                     .Take(recordsByPage)
@@ -88,7 +87,6 @@ namespace Infrastructure.Services
                         PoliticalPartyId = c.PoliticalPartyId,
                         PoliticalPartyName = p.PoliticalPartyName,
                         Id = c.Id,
-                        Status = c.Status
                     })
                     .ToListAsync();
 

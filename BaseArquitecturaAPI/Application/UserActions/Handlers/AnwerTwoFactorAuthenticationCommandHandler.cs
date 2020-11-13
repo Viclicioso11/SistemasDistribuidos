@@ -40,9 +40,9 @@ namespace Application.UserActions.Handlers
 
             var tokenHelper = new JwtHelper(_conf);
 
-            var options = new List<Option> { new Option { OptionName = "crear" }, new Option {OptionName = "editar" } };
+            // consumir servicio para obtener el rol del usuario
 
-            tfaDto.Token = tokenHelper.GenerateJwtToken(user, options, new Rol { RolName = "Admin" });
+            tfaDto.Token = tokenHelper.GenerateJwtToken(user,  new Rol { RolName = "Admin" });
 
             
             return tfaDto;

@@ -10,6 +10,11 @@ using BaseArquitecturaAPI.ApiExceptionFilter;
 using AutoMapper;
 using System.Reflection;
 using BaseArquitecturaAPI.Policies;
+using BaseArquitecturaAPI.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace BaseArquitecturaAPI
 {
@@ -54,7 +59,7 @@ namespace BaseArquitecturaAPI
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseRouting();           
 
             app.UseCors(builder => builder
                 .AllowAnyOrigin()
@@ -67,6 +72,13 @@ namespace BaseArquitecturaAPI
             {
                 endpoints.MapControllers();
             });
+            /*
+            app.UseWhen(context => context.Request.Path.StartsWithSegments(new PathString("/api")), appBuilder =>
+            {
+                appBuilder.UseJwtMiddleware();
+            });
+            */
+            
         }
     }
 }

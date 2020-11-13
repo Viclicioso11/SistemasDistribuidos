@@ -110,7 +110,6 @@ namespace Infrastructure.Services
                                      MiddleName = c.MiddleName,
                                      Surname = c.Surname,
                                      Id = c.Id,
-                                     Status = c.Status,
                                      PoliticalPartyId = c.PoliticalPartyId,
                                      PoliticalPartyName = politicalParty.PoliticalPartyName
                                  };
