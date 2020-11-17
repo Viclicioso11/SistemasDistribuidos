@@ -22,8 +22,8 @@ namespace Infrastructure.Database.Configurations
                 .Property(v => v.PoliticalPartyName)
                 .HasColumnName("Name")
                 .IsRequired()
-                .HasMaxLength(30)
-                .HasColumnType("varchar(30)");
+                .HasMaxLength(60)
+                .HasColumnType("varchar(60)");
 
             builder
                 .Property(v => v.Abreviation)
@@ -31,7 +31,6 @@ namespace Infrastructure.Database.Configurations
                 .IsRequired()
                 .HasMaxLength(6)
                 .HasColumnType("varchar(6)");
-
         }
     }
 }

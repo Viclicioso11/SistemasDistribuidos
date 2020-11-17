@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj": {}
+    "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {
+    "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Edgard Abud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\obj\\",
+        "projectPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edgard Abud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj"
+              "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj"
               }
             }
           }
@@ -90,28 +90,25 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj": {
+    "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj",
         "projectName": "BaseArquitecturaAPI",
-        "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj",
-        "packagesPath": "C:\\Users\\Edgard Abud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\obj\\",
+        "projectPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\BaseArquitecturaAPI.csproj",
+        "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\BaseArquitecturaAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edgard Abud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,11 +121,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj"
+              "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj"
               },
-              "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -181,21 +178,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj": {
+    "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Edgard Abud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edgard Abud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -233,21 +230,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Edgard Abud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Bryan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edgard Abud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -260,8 +257,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj"
+              "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Application\\Application.csproj"
               }
             }
           }
@@ -309,14 +306,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
