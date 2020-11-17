@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7C9AP+/FZ50PGDhTzm8WQhoi9K+PKyeLcqRCq5S7sxsUlmxnuf369w5dFQN5FtFxqFXIYUFRCTNljfRyWLFfjQ==",
+  "dgSpecHash": "R0YKdiAegAVwsOEy+fq6L5IaBo0m+kX4Q4x7M4malIM9Mpbo02mdWeNsxvPsQA74kb8g9JjanJKbce77o1tyLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Edgard Abud\\Documents\\UCA\\SISTEMAS DISTRIBUIDOS\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Bryan\\Documents\\Code\\SistemasDistribuidos\\BaseArquitecturaAPI\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
