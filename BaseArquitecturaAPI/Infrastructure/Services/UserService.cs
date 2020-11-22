@@ -38,6 +38,9 @@ namespace Infrastructure.Services
             {
                 var user = _context.Users.Find(id);
 
+                if (user == null)
+                    return false;
+
                 user.Status = false;
 
                 _context.Update(user);

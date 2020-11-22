@@ -38,6 +38,9 @@ namespace Infrastructure.Services
             {
                 var option = _context.Options.Find(id);
 
+                if (option == null)
+                    return false;
+
                 // eliminar los registros de rol opciones primero
 
                 var optionsRols = _context.RolOptions.Where(op => op.OptionId == option.Id);
