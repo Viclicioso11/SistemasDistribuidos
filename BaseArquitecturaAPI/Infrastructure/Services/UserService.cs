@@ -120,15 +120,18 @@ namespace Infrastructure.Services
         {
            var user = await _context.Users.Where(u => u.Status == true && u.Id == userId).FirstOrDefaultAsync();
 
-            if (user != null)
+           if (user != null)
                 return user;
 
-            return null;
+           return null;
         }
 
         public async Task<User> UpdateUser(User user)
         {
             var userToEdit = _context.Users.Find(user.Id);
+
+            if (userToEdit == null)
+                return null;
 
             userToEdit.Names = user.Names;
             userToEdit.LastNames = user.LastNames;

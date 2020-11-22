@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.CatalogActions.Querys;
+using Application.Common.Exceptions;
 using Application.UserActions.Commands;
 using Application.UserActions.Querys;
 using Application.VotationActions.Commands;
@@ -10,6 +11,7 @@ using Application.VotationActions.Querys;
 using AutoMapper;
 using BaseArquitecturaAPI.Models;
 using Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 
@@ -20,7 +22,6 @@ namespace BaseArquitecturaAPI.Controllers
     [Route("api/catalog/")]
     public class CatalogController : BaseController
     {
-
         private readonly IMapper _mapper;
         public CatalogController(IMapper mapper)
         {
@@ -49,7 +50,13 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
-            var cities = await Mediator.Send(new GetAllCitiesQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
+
+            var userId = HttpContext.Items["UserId"] == null? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
+            var cities = await Mediator.Send(new GetAllCitiesQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records, UserId = int.Parse(userId) });
 
             if (cities == null)
                 return NotFound();

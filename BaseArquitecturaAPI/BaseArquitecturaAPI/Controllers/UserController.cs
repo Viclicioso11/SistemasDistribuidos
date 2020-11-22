@@ -90,7 +90,7 @@ namespace BaseArquitecturaAPI.Controllers
         }
 
         [HttpDelete()]
-        public async Task<IActionResult> DeleteUser([FromBody] DeleteUserModelJson body)
+        public async Task<IActionResult> DeleteUser([FromBody] DeleteModelJson body)
         {
             if (!ModelState.IsValid)
             {

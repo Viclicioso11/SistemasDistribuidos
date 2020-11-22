@@ -59,6 +59,8 @@ namespace BaseArquitecturaAPI
 
             app.UseHttpsRedirection();
 
+            app.UseJwtMiddleware();
+
             app.UseRouting();           
 
             app.UseCors(builder => builder
@@ -72,12 +74,7 @@ namespace BaseArquitecturaAPI
             {
                 endpoints.MapControllers();
             });
-            /*
-            app.UseWhen(context => context.Request.Path.StartsWithSegments(new PathString("/api")), appBuilder =>
-            {
-                appBuilder.UseJwtMiddleware();
-            });
-            */
+
             
         }
     }

@@ -124,6 +124,9 @@ namespace Infrastructure.Services
         {
             var politicalPartyToEdit = _context.PoliticalParties.Find(politicalParty.Id);
 
+            if (politicalPartyToEdit == null)
+                return null;
+
             politicalPartyToEdit.Abreviation = politicalParty.Abreviation;
             politicalPartyToEdit.PoliticalPartyName = politicalParty.PoliticalPartyName;
 

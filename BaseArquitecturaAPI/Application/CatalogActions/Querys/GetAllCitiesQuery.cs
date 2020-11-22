@@ -14,5 +14,7 @@ namespace Application.CatalogActions.Querys
         public string FilterBy { get; set; }
 
         public int RecordsByPage { get; set; }
+
+        public int UserId { get; set; }
     }
 }

@@ -24,6 +24,8 @@ namespace Infrastructure
             services.AddTransient<ITwoFactorAuthenticationService, TwoFactorAuthenticationService>();
             services.AddTransient<IPoliticalPartyService, PoliticalPartyService>();
             services.AddTransient<ICandidateService, CandidateService>();
+            services.AddTransient<IOptionService, OptionService>();
+            services.AddTransient<IRolService, RolService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(configuration.GetConnectionString("votationDb")));

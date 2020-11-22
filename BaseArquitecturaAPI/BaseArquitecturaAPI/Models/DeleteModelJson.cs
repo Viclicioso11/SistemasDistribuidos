@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BaseArquitecturaAPI.Models
 {
     [DataContract]
-    public class DeleteUserModelJson
+    public class DeleteModelJson
     {
         [DataMember(Name = "ids")]
         public List<int> Ids { get; set; }

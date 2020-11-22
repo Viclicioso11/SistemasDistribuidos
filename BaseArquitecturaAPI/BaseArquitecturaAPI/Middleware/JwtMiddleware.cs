@@ -23,25 +23,25 @@ namespace BaseArquitecturaAPI.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-           //just testing now
+
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            int? userId = 0;
 
-            if (token == null)
-                throw new UnauthorizedException("Falta token");
+            if (token != null)
+            {
+                var tokenHelper = new JwtHelper(_conf);
 
-            var tokenHelper = new JwtHelper(_conf);
+                userId = tokenHelper.ValidateJwtToken(token);
 
-            var result = tokenHelper.ValidateJwtToken(token);
-
-            if(result == null)
-                throw new UnauthorizedException("Token no válido");
-
-            context.Items["UserId"] = result;
+                // si no es valido se setea en 0 para validar en los endpoints
+                if (userId == null)
+                    userId = 0;
+            }
+                
+            context.Items["UserId"] = userId;
             
             await _next(context);
         }
-
-        
 
     }
 

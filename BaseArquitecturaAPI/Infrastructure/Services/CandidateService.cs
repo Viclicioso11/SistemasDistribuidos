@@ -116,6 +116,10 @@ namespace Infrastructure.Services
         {
             var candidateToEdit = _context.Candidates.Find(candidate.Id);
 
+            if (candidateToEdit == null)
+                return null;
+
+
             candidateToEdit.FirstName = candidate.FirstName;
             candidateToEdit.LastName = candidate.LastName;
             candidateToEdit.MiddleName = candidate.MiddleName;
