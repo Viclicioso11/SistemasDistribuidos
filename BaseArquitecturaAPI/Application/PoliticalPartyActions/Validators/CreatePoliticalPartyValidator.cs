@@ -23,7 +23,7 @@ namespace Application.PoliticalPartyActions.Validators
                 RuleFor(c => c.PoliticalParty.PoliticalPartyName)
                 .NotNull()
                 .NotEmpty()
-                .MaximumLength(30);
+                .MaximumLength(60);
 
             });
         }
