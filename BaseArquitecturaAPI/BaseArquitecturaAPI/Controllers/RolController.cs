@@ -6,6 +6,7 @@ using Application.CandidateActions.Commands;
 using Application.CandidateActions.Querys;
 using Application.RolActions.Commands;
 using Application.RolActions.Querys;
+using Application.RolOptionActions.Commands;
 using AutoMapper;
 using BaseArquitecturaAPI.Models;
 using Domain.Entities;
@@ -27,7 +28,7 @@ namespace BaseArquitecturaAPI.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> GetAllRols(int page =1 , string filter = "", int records = 10)
+        public async Task<IActionResult> GetAllRols(int page = 1, string filter = "", int records = 10)
         {
             if (!ModelState.IsValid)
             {
@@ -44,7 +45,7 @@ namespace BaseArquitecturaAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRolById(int id)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
@@ -53,7 +54,7 @@ namespace BaseArquitecturaAPI.Controllers
             if (candidate == null)
                 return NotFound();
 
-            return Ok(candidate) ;
+            return Ok(candidate);
         }
 
         [HttpPut("{id}")]
@@ -83,7 +84,7 @@ namespace BaseArquitecturaAPI.Controllers
 
             var response = await Mediator.Send(new CreateRolCommand { Rol = _mapper.Map<Rol>(body) });
 
-            if(response !=null)
+            if (response != null)
                 return Ok(response);
 
             return BadRequest();
@@ -102,6 +103,54 @@ namespace BaseArquitecturaAPI.Controllers
                 return Ok(response);
 
             return BadRequest();
+        }
+
+        [Route("rol-option")]
+        [HttpPost()]
+        public async Task<IActionResult> PostCreateRolOption([FromBody] CreateRolOptionJsonModel body)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var response = await Mediator.Send(new CreateRolOptionCommand { IdRol = body.RolId, OptionIds = body.OptionIds });
+
+            if (!response)
+                return BadRequest(response);
+
+            return Ok(response);
+
+        }
+
+
+        [Route("rol-option")]
+        [HttpDelete()]
+        public async Task<IActionResult> PostDeleteRolOption([FromBody] DeleteRolOptionJsonModel body)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            List<RolOption> listRolOp = new List<RolOption>();
+
+            foreach(var rop in body.RolOption)
+            {
+                listRolOp.Add(new RolOption
+                {
+                    OptionId = rop.OptionId,
+                    RolId = rop.RolId
+                });
+            };
+
+            var response = await Mediator.Send(new DeleteRolOptionCommand { rolOptions = listRolOp });
+
+            if (!response)
+                return BadRequest(response);
+
+            return Ok(response);
+
         }
 
     }

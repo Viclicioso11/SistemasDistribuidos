@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.UserActions.Commands;
 using Application.UserActions.Querys;
+using Application.UserRolActions.Commands;
 using Application.VotationActions.Commands;
 using Application.VotationActions.Querys;
 using AutoMapper;
@@ -105,6 +106,7 @@ namespace BaseArquitecturaAPI.Controllers
             return BadRequest();
         }
 
+        // Auth and TFA
         [Route("auth")]
         [HttpPost()]
         public async Task<IActionResult> Authenticate([FromBody] LoginModelJson body)
@@ -138,6 +140,44 @@ namespace BaseArquitecturaAPI.Controllers
                 return Ok(response);
 
             return BadRequest();
+        }
+
+        // UserRols
+        [Route("user-rol")]
+        [HttpPost()]
+        public async Task<IActionResult> PostCreateRolOption([FromBody] CreateUserRolJsonModel body)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var response = await Mediator.Send(new CreateUserRolCommand { IdUser = body.UserId, RolIds = body.RolIds });
+
+            if (!response)
+                return BadRequest(response);
+
+            return Ok(response);
+
+        }
+
+
+        [Route("user-rol")]
+        [HttpDelete()]
+        public async Task<IActionResult> PostDeleteRolOption([FromBody] DeleteUserRolJsonModel body)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var response = await Mediator.Send(new DeleteUserRolCommand { UserId = body.UserId, RolId = body.RolId });
+
+            if (!response)
+                return BadRequest(response);
+
+            return Ok(response);
+
         }
     }
 }
