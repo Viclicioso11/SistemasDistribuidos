@@ -31,11 +31,18 @@ namespace Infrastructure.Database.Configurations
                 .HasColumnType("varchar(200)");
 
             builder
-                .HasData(new VotationType
+                .HasData(
+                new VotationType
                 {
                     Id = 1,
                     VotationTypeName = "Alcaldía",
                     VotationTypeDescription = "Votaciones municipales"
+                },
+                new VotationType
+                {
+                    Id = 2,
+                    VotationTypeName = "Presidencial",
+                    VotationTypeDescription = "Votación nacional"
                 });
 
         }

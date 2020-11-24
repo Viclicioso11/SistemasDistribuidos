@@ -47,7 +47,8 @@ namespace Infrastructure.Database.Configurations
                 new State { Id = 12, StateName = "Matagalpa", CountryId = 1 },
                 new State { Id = 13, StateName = "Nueva Segovia", CountryId = 1 },
                 new State { Id = 14, StateName = "Río San Juan", CountryId = 1 },
-                new State { Id = 15, StateName = "Rivas", CountryId = 1 }
+                new State { Id = 15, StateName = "Rivas", CountryId = 1 },
+                new State { Id = 16, StateName = "Defecto", CountryId = 1 }
 
                 );
         }

@@ -12,7 +12,7 @@ namespace Infrastructure.Database
         {
             //just in migration moments, can be deleted then
             var optionsBuilder = new DbContextOptionsBuilder<DatabaseContext>();
-            optionsBuilder.UseSqlServer("Server = localhost; Database = votationDb; User Id = sa; Password = andromedaKZH1");
+            optionsBuilder.UseSqlServer("Server = DESKTOP-BKFVL1D; Database = votationDb; trusted_connection = true");
 
             return new DatabaseContext(optionsBuilder.Options);
         }

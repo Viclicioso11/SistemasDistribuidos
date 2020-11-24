@@ -21,10 +21,6 @@ namespace Application.VotationActions.Dtos
 
         public bool VotationStatus { get; set; }
 
-        public City City { get; set; }
-
-        public VotationType VotationType { get; set; }
-
         public void Mapping(Profile profile)
         {   
             profile.CreateMap<Votation, VotationDto>()

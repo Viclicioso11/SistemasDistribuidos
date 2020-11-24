@@ -188,7 +188,9 @@ namespace Infrastructure.Database.Configurations
              new City { Id = 130, CityName = "San Juan del Sur", CityCode = "567", StateId = 15 },
              new City { Id = 131, CityName = "Cárdenas", CityCode = "568", StateId = 15 },
              new City { Id = 132, CityName = "Moyogalpa", CityCode = "569", StateId = 15 },
-             new City { Id = 133, CityName = "Altagracia", CityCode = "570", StateId = 15 }
+             new City { Id = 133, CityName = "Altagracia", CityCode = "570", StateId = 15 },
+
+             new City { Id = 134, CityName = "DefectoNicaragua", CityCode = "0", StateId = 16 }
             );
         }
     }                       
