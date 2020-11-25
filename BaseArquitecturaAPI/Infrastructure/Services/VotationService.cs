@@ -1,4 +1,6 @@
 ﻿using Application.Common.Interfaces;
+using Application.Common.Pager;
+using Application.VotationActions.Dtos;
 using Domain.Entities;
 using Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +13,7 @@ using System.Threading.Tasks;
 namespace Infrastructure.Services
 {
     /// <summary>
-    /// This class implement IVotationService Interface and is responsable of connecting to db or to http requests
+    /// This class implement IVotationService Interface and is responsable of connecting to db or creating http requests
     /// </summary>
     public class VotationService : IVotationService
     {
@@ -23,6 +25,7 @@ namespace Infrastructure.Services
 
         public async Task<bool> CreateVotation(Votation votation)
         {
+            votation.VotationStatus = true;
             _context.Add(votation);
 
             var result = await _context.SaveChangesAsync();
@@ -33,41 +36,126 @@ namespace Infrastructure.Services
             return true;
         }
 
+        public async Task<GenericPager<VotationDto>> GetAllVotation(string filterBy, int page, int recordsByPage)
+        {
+            var information = new GenericPager<VotationDto>();
+
+            information.ActualPage = page;
+            information.RecordsByPage = recordsByPage;
+
+
+            if (string.IsNullOrEmpty(filterBy))
+            {
+                information.Results = await (from v in _context.Votations
+                                             join t in _context.VotationTypes
+                                             on v.VotationTypeId equals t.Id
+                                             join c in _context.Cities
+                                             on v.CityId equals c.Id
+                                             select new VotationDto
+                                             {
+                                                 Id = v.Id,
+                                                 VotationDescription = v.VotationDescription,
+                                                 VotationTypeId = t.Id,
+                                                 VotationTypeName = t.VotationTypeName,
+                                                 VotationEndDate = v.VotationEndDate,
+                                                 VotationStartDate = v.VotationStartDate,
+                                                 VotationStatus = v.VotationStatus,
+                                                 CityId = c.Id,
+                                                 CityName = c.CityName
+                                             })
+                                             .Skip((page - 1) * recordsByPage)
+                                             .Take(recordsByPage)
+                                             .ToListAsync();
+
+                information.TotalRecords = _context.Votations.Count();
+                information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
+
+                information.Next = page < information.TotalPages;
+                information.Previous = page > 1;
+            }
+            else
+            {
+
+                information.Results = await (from v in _context.Votations
+                                             join t in _context.VotationTypes
+                                             on v.VotationTypeId equals t.Id
+                                             join c in _context.Cities
+                                             on v.CityId equals c.Id
+                                             where v.VotationDescription.Contains(filterBy)
+                                             select new VotationDto
+                                             {
+                                                 Id = v.Id,
+                                                 VotationDescription = v.VotationDescription,
+                                                 VotationTypeId = t.Id,
+                                                 VotationTypeName = t.VotationTypeName,
+                                                 VotationEndDate = v.VotationEndDate,
+                                                 VotationStartDate = v.VotationStartDate,
+                                                 VotationStatus = v.VotationStatus,
+                                                 CityId = c.Id,
+                                                 CityName = c.CityName
+                                             })
+                                             .Skip((page - 1) * recordsByPage)
+                                             .Take(recordsByPage)
+                                             .ToListAsync();
+
+                information.TotalRecords = information.Results.Count();
+                information.Results = information.Results.Skip((page - 1) * recordsByPage).Take(recordsByPage).ToList(); // para la paginacion
+                information.TotalPages = information.TotalRecords != 0 ? (int)Math.Ceiling((double)information.TotalRecords / recordsByPage) : 0;
+
+                information.Next = page < information.TotalPages;
+                information.Previous = page > 1;
+            }
+
+            return information;
+        }
+
         // para validar si hay una votación en curso
         public async Task<Votation> GetCurrentVotation()
         {
-            var currentVotation = await _context.Votations.Where(v => v.VotationEndDate < DateTime.Now).FirstOrDefaultAsync();
+            var currentVotations = await _context.Votations.Where(v => v.VotationStatus == true).ToListAsync();
 
-            return currentVotation;
+            foreach (var vot in currentVotations)
+            {
+                if (vot.VotationEndDate > DateTime.Now)
+                    return vot;
+            }
+
+            return null;
         }
 
         // para validar si hay votaciones en alguna ciudad en curso
         public async Task<Votation> GetCurrentVotationByCityId(int cityId)
         {
-            var votation = await _context.Votations.Where(v => v.CityId == cityId && v.VotationEndDate < DateTime.Now).FirstOrDefaultAsync();
+            var votations = await _context.Votations.Where(v => v.CityId == cityId && v.VotationStatus == true).ToListAsync();
 
-            return votation;
+            foreach (var vot in votations)
+            {
+                if (vot.VotationEndDate > DateTime.Now)
+                    return vot;
+            }
+
+            return null;
         }
 
-        public async Task<Votation> GetVotationById(int id)
+        public async Task<VotationDto> GetVotationById(int id)
         {
             //another way
             var votation = (from v in _context.Votations
-                           join c in _context.Cities
-                           on v.CityId equals c.Id
-                           join t in _context.VotationTypes
-                           on v.VotationTypeId equals t.Id
-                           where v.Id == id
-                           select new Votation
-                           {
-                               Id = v.Id,
-                               VotationDescription = v.VotationDescription,
-                               VotationType = t,
-                               City = c,
-                               VotationEndDate = v.VotationEndDate,
-                               VotationStartDate = v.VotationStartDate,
-                               VotationStatus = v.VotationStatus
-                           }).FirstOrDefault();
+                            join c in _context.Cities
+                            on v.CityId equals c.Id
+                            join t in _context.VotationTypes
+                            on v.VotationTypeId equals t.Id
+                            where v.Id == id
+                            select new VotationDto
+                            {
+                                Id = v.Id,
+                                VotationDescription = v.VotationDescription,
+                                VotationTypeId = t.Id,
+                                VotationTypeName = t.VotationTypeName,
+                                VotationEndDate = v.VotationEndDate,
+                                VotationStartDate = v.VotationStartDate,
+                                VotationStatus = v.VotationStatus
+                            }).FirstOrDefault();
 
             return votation;
         }
@@ -80,7 +168,7 @@ namespace Infrastructure.Services
                 return false;
 
             votationToEdit.VotationDescription = votation.VotationDescription;
-           
+
             _context.Votations.Update(votationToEdit);
 
             var result = await _context.SaveChangesAsync();

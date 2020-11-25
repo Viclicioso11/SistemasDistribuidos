@@ -1,11 +1,6 @@
-﻿using Application.Common.Mappings;
-using Application.VotationActions.Commands;
-using AutoMapper;
+﻿using AutoMapper;
 using BaseArquitecturaAPI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Domain.Entities;
 
 namespace BaseArquitecturaAPI.Profiles
 {
@@ -13,7 +8,7 @@ namespace BaseArquitecturaAPI.Profiles
     {
         public VotationModelProfile()
         {
-            CreateMap<VotationModelJson, VotationCommand>()
+            CreateMap<VotationModelJson, Votation>()
                 .ForMember(vc => vc.CityId, v => v.MapFrom(vm => vm.CityId))
                 .ForMember(vc => vc.VotationDescription, v => v.MapFrom(vm => vm.VotationDescription))
                 .ForMember(vc => vc.VotationEndDate, v => v.MapFrom(vm => vm.VotationEndDate))

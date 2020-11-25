@@ -9,9 +9,15 @@ namespace Application.VotationActions.Dtos
 {
     public class VotationDto : IMapFrom<Votation>
     {
-        public int VotationId { get; set; }
+        public int Id { get; set; }
 
         public int VotationTypeId { get; set; }
+
+        public string VotationTypeName { get; set; }
+
+        public int CityId { get; set; }
+
+        public string CityName { get; set; }
 
         public string VotationDescription { get; set; }
 
@@ -24,7 +30,7 @@ namespace Application.VotationActions.Dtos
         public void Mapping(Profile profile)
         {   
             profile.CreateMap<Votation, VotationDto>()
-                .ForMember(vt => vt.VotationId, opt => opt.MapFrom(v => v.Id))
+                .ForMember(vt => vt.Id, opt => opt.MapFrom(v => v.Id))
                 .ForMember(vt => vt.VotationDescription, opt => opt.MapFrom(v => v.VotationDescription))
                 .ForMember(vt => vt.VotationEndDate, opt => opt.MapFrom(v => v.VotationEndDate))
                 .ForMember(vt => vt.VotationStartDate, opt => opt.MapFrom(v => v.VotationStartDate))

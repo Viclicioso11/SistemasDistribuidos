@@ -37,7 +37,7 @@ namespace Application.VotationActions.Handlers
             // si la votacion a crear es de tipo presidencial, se valida que haya alguna votacion en curso
             if (request.Votation.VotationTypeId == 2)
             {
-                var currentVotation = _votationSevice.GetCurrentVotation();
+                var currentVotation = await _votationSevice.GetCurrentVotation();
 
                 if (currentVotation != null)
                     throw new ErrorException("05", "Ya hay una votación en curso");
@@ -55,14 +55,14 @@ namespace Application.VotationActions.Handlers
             }
             else if (request.Votation.VotationTypeId == 1)
             {
-                var currentCityVotation = _votationSevice.GetCurrentVotationByCityId(city.CityId);
+                var currentCityVotation = await _votationSevice.GetCurrentVotationByCityId(city.CityId);
 
                 if (currentCityVotation != null)
                     throw new ErrorException("08", "Ya hay una votación en este municipio en curso");
 
                 //validamos que haya una votacion presedencial en curso (id harcoded momentaneamente)
 
-                var varPresidencialVotation = _votationSevice.GetCurrentVotationByCityId(134);
+                var varPresidencialVotation = await _votationSevice.GetCurrentVotationByCityId(134);
 
                 if (varPresidencialVotation != null)
                     throw new ErrorException("10", "Ya hay una votación presidencial en curso");

@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Common.Pager;
+using Application.VotationActions.Dtos;
 using Domain.Entities;
 
 namespace Application.Common.Interfaces
 {
     public interface IVotationService
     {
-        public Task<Votation> GetVotationById(int id);
+        public Task<VotationDto> GetVotationById(int id);
+
+        public Task<GenericPager<VotationDto>> GetAllVotation(string filterBy, int page, int recordsByPage);
 
         public Task<bool> CreateVotation(Votation votation);
 

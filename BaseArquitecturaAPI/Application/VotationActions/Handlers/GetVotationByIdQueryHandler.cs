@@ -28,7 +28,7 @@ namespace Application.VotationActions.Handlers
             if (votation == null)
                 throw new NotFoundException("Votación no encontrada", request.VotationId);
 
-            return _mapper.Map<VotationDto>(votation);
+            return votation;
         }
     }
 }
