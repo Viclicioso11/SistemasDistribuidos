@@ -21,10 +21,5 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "user_id")]
         public int UserId { get; set; }
 
-        [DataMember(Name = "user")]
-        public UserModelJson User { get; set; }
-
-        [DataMember(Name = "candidate")]
-        public CandidateModelJson Candidate { get; set; }
     }
 }

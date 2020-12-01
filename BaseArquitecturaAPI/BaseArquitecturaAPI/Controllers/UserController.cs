@@ -82,7 +82,7 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
-            var response = await Mediator.Send(new CreateUserCommand { User = _mapper.Map<User>(body) });
+            var response = await Mediator.Send(new CreateUserCommand { User = _mapper.Map<User>(body), RolId = body.RolId });
 
             if(response !=null)
                 return Ok(response);

@@ -10,31 +10,43 @@ namespace Application.UserActions.Validators
     {
         public CreateUserValidator()
         {
-            RuleFor(c => c.User.Email)
+
+            RuleFor(v => v.User)
+                .NotNull();
+
+            RuleFor(c => c.RolId)
+                .NotEmpty()
+                .NotNull();
+
+            When(c => c.User != null, () =>
+            {
+                RuleFor(c => c.User.Email)
                 .EmailAddress()
                 .NotEmpty()
                 .NotNull()
                 .MaximumLength(50);
 
-            RuleFor(c => c.User.Identification)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(20);
+                RuleFor(c => c.User.Identification)
+                    .NotEmpty()
+                    .NotNull()
+                    .MaximumLength(20);
 
-            RuleFor(c => c.User.Names)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(50);
+                RuleFor(c => c.User.Names)
+                    .NotEmpty()
+                    .NotNull()
+                    .MaximumLength(50);
 
-            RuleFor(c => c.User.LastNames)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(50);
+                RuleFor(c => c.User.LastNames)
+                    .NotEmpty()
+                    .NotNull()
+                    .MaximumLength(50);
 
-            RuleFor(c => c.User.Password)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(20);
+                RuleFor(c => c.User.Password)
+                    .NotEmpty()
+                    .NotNull()
+                    .MaximumLength(20);
+            });
+
         }
     }
 }

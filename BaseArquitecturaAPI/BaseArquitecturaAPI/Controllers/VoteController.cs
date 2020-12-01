@@ -10,12 +10,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseArquitecturaAPI.Controllers
 {
-    [Route("api/votation/")]
-    public class VotationController : BaseController
+    [Route("api/vote/")]
+    public class VoteController : BaseController
     {
 
         private readonly IMapper _mapper;
-        public VotationController(IMapper mapper)
+        public VoteController(IMapper mapper)
         {
             _mapper = mapper;
         }
@@ -84,7 +84,7 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
-            var response = await Mediator.Send(new CreateVotationCommand {Votation = _mapper.Map<Votation>(body), Candidates = body.Candidates});
+            var response = await Mediator.Send(new CreateVotationCommand {Votation = _mapper.Map<Votation>(body)});
 
             return Ok(response);
         }

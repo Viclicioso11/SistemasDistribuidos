@@ -2,6 +2,7 @@
 using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Application.VotationActions.Validators
@@ -12,6 +13,10 @@ namespace Application.VotationActions.Validators
         {
             RuleFor(v => v.Votation)
                 .NotNull();
+
+            RuleFor(v => v.Candidates)
+                .NotNull()
+                .NotEmpty();
 
             When(c => c.Votation != null, () =>
             {
@@ -30,7 +35,8 @@ namespace Application.VotationActions.Validators
 
                 RuleFor(c => c.Votation.VotationStartDate)
                 .NotNull()
-                .NotEmpty();
+                .NotEmpty()
+                .Must(v => v >= DateTime.Now);
 
                 // validar que la fecha de fin sea mayor que la fecha de inicio 
                 When(v => v.Votation.VotationEndDate != null && v.Votation.VotationStartDate != null, () =>

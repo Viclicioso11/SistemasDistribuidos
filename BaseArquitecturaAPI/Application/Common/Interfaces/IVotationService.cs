@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Common.Pager;
+using Application.VotationActions.Commands;
 using Application.VotationActions.Dtos;
 using Domain.Entities;
 
@@ -14,7 +15,9 @@ namespace Application.Common.Interfaces
 
         public Task<GenericPager<VotationDto>> GetAllVotation(string filterBy, int page, int recordsByPage);
 
-        public Task<bool> CreateVotation(Votation votation);
+        public Task<int> CreateVotation(Votation votation);
+
+        public Task<bool> AddVotationCandidate(List<int> candidatesId, int votationId);
 
         public Task<bool> UpdateVotation(Votation votation);
 

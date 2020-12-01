@@ -29,6 +29,12 @@ namespace Infrastructure.Database.Configurations
                .WithMany(v => v.Votes)
                .IsRequired()
                .HasConstraintName("FkCandidateVoteId");
+
+            builder
+               .HasOne(v => v.Votation)
+               .WithMany(v => v.Votes)
+               .IsRequired()
+               .HasConstraintName("FkVotationVoteId");
         }
     }
 

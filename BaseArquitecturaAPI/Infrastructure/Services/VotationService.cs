@@ -1,5 +1,7 @@
-﻿using Application.Common.Interfaces;
+﻿using Application.CandidateActions.Dtos;
+using Application.Common.Interfaces;
 using Application.Common.Pager;
+using Application.VotationActions.Commands;
 using Application.VotationActions.Dtos;
 using Domain.Entities;
 using Infrastructure.Database;
@@ -23,7 +25,30 @@ namespace Infrastructure.Services
             _context = context;
         }
 
-        public async Task<bool> CreateVotation(Votation votation)
+        public async Task<bool> AddVotationCandidate(List<int> candidatesId, int votationId)
+        {
+            foreach (var candidateId in candidatesId)
+            {
+
+                var candidate = await _context.Candidates.FindAsync(candidateId);
+
+                if (candidate == null)
+                    return false;
+
+                _context.VotationDetail.Add(new VotationDetail { CandidateId = candidateId, VotationId = votationId });
+
+            }
+
+            var saved = _context.SaveChanges();
+
+            if (saved == 0)
+                return false;
+
+
+            return true;
+        }
+
+        public async Task<int> CreateVotation(Votation votation)
         {
             votation.VotationStatus = true;
             _context.Add(votation);
@@ -31,9 +56,9 @@ namespace Infrastructure.Services
             var result = await _context.SaveChangesAsync();
 
             if (result == 0)
-                return false;
+                return 0;
 
-            return true;
+            return votation.Id;
         }
 
         public async Task<GenericPager<VotationDto>> GetAllVotation(string filterBy, int page, int recordsByPage)
@@ -140,7 +165,7 @@ namespace Infrastructure.Services
         public async Task<VotationDto> GetVotationById(int id)
         {
             //another way
-            var votation = (from v in _context.Votations
+            var votation = await (from v in _context.Votations
                             join c in _context.Cities
                             on v.CityId equals c.Id
                             join t in _context.VotationTypes
@@ -154,8 +179,31 @@ namespace Infrastructure.Services
                                 VotationTypeName = t.VotationTypeName,
                                 VotationEndDate = v.VotationEndDate,
                                 VotationStartDate = v.VotationStartDate,
-                                VotationStatus = v.VotationStatus
-                            }).FirstOrDefault();
+                                VotationStatus = v.VotationStatus,
+                                CityId = c.Id,
+                                CityName = c.CityName
+                            }).FirstOrDefaultAsync();
+
+            if (votation == null)
+                return null;
+
+            votation.Candidates = (from vd in _context.VotationDetail
+                                  join c in _context.Candidates
+                                  on vd.CandidateId equals c.Id
+                                  join p in _context.PoliticalParties
+                                  on c.PoliticalPartyId equals p.Id
+                                  where vd.VotationId == id
+                                  select new CandidateDto
+                                  {
+                                      FirstName = c.FirstName,
+                                      Surname = c.Surname,
+                                      LastName = c.LastName,
+                                      MiddleName = c.MiddleName,
+                                      PoliticalPartyId = c.PoliticalPartyId,
+                                      PoliticalPartyName = p.PoliticalPartyName,
+                                      Id = c.Id,
+                                  }).ToList();
+
 
             return votation;
         }

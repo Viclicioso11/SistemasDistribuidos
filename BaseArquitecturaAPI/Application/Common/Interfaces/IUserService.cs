@@ -16,7 +16,7 @@ namespace Application.Common.Interfaces
 
         public Task<bool> DeleteUsers(List<int> ids);
 
-        public Task<bool> CreateUser(User user);
+        public Task<int> CreateUser(User user);
 
         public Task<GenericPager<UserDto>> GetAllUser(string filterBy, int page, int recordsByPage);
 

@@ -1,4 +1,5 @@
-﻿using Application.Common.Mappings;
+﻿using Application.CandidateActions.Dtos;
+using Application.Common.Mappings;
 using AutoMapper;
 using Domain.Entities;
 using System;
@@ -26,6 +27,8 @@ namespace Application.VotationActions.Dtos
         public DateTime VotationEndDate { get; set; }
 
         public bool VotationStatus { get; set; }
+
+        public List<CandidateDto> Candidates { get; set; }
 
         public void Mapping(Profile profile)
         {   

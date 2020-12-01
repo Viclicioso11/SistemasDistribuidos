@@ -16,20 +16,27 @@ namespace Application.UserActions.Handlers
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserDto>
     {
         private readonly IUserService _service;
+        private readonly IUserRolService _userRolService;
         private readonly IMapper _mapper;
-        public CreateUserCommandHandler(IUserService service, IMapper mapper)
+        public CreateUserCommandHandler(IUserService service, IMapper mapper, IUserRolService userRolService)
         {
             _service = service;
             _mapper = mapper;
+            _userRolService = userRolService;
         }
         public async Task<UserDto> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             request.User.Status = true;
 
-            var result = await _service.CreateUser(request.User);
+            var userId = await _service.CreateUser(request.User);
 
-            if (!result)
+            if (userId == 0)
                 throw new ErrorException("01", "Error tratando de crear cliente");
+
+            var asigned = await _userRolService.CreateUserRol(userId, new List<int> { request.RolId });
+
+            if (!asigned)
+                throw new ErrorException("01", "Error tratando de asignar rol a usuario");
 
             return  _mapper.Map<UserDto>(request.User);
         }

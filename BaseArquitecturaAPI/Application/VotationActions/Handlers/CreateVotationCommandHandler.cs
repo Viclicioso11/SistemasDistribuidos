@@ -7,6 +7,7 @@ using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,12 +28,17 @@ namespace Application.VotationActions.Handlers
 
         public async Task<bool> Handle(CreateVotationCommand request, CancellationToken cancellationToken)
         {
+            int votatonId = 0;
             bool saved = false;
 
             var city = await _catalogService.GetCityById(request.Votation.CityId);
 
             if (city == null)
                 throw new ErrorException("06", "Código de ciudad no válido");
+
+            foreach (var candidateId in request.Candidates)
+                if (request.Candidates.Where(c => c == candidateId).Count() > 1)
+                    throw new ErrorException("11", "Candidatos repetidos");
 
             // si la votacion a crear es de tipo presidencial, se valida que haya alguna votacion en curso
             if (request.Votation.VotationTypeId == 2)
@@ -46,10 +52,18 @@ namespace Application.VotationActions.Handlers
                 if (!city.CityCode.Equals("0"))
                     throw new ErrorException("07", "Código de ciudad incorrecto para elecciones presidenciales");
 
-                saved = await _votationSevice.CreateVotation(request.Votation);
+                // obtiene Id de la votacion al guardar
+                votatonId = await _votationSevice.CreateVotation(request.Votation);
+
+                if (votatonId == 0)
+                    throw new ErrorException("01", "No se pudo crear la votación");
+
+                // a guardar en el detalle de la votacion y el candidato
+
+                saved = await _votationSevice.AddVotationCandidate(request.Candidates, votatonId);
 
                 if (!saved)
-                    throw new ErrorException("01", "No se pudo crear la votación");
+                    throw new ErrorException("01", "No se crearon los registros de votación");
 
                 // si la votacion es municipal, validar que no se puedan crear varias votaciones en los mismos municipios
             }
@@ -67,13 +81,21 @@ namespace Application.VotationActions.Handlers
                 if (varPresidencialVotation != null)
                     throw new ErrorException("10", "Ya hay una votación presidencial en curso");
 
-                saved = await _votationSevice.CreateVotation(request.Votation);
+                // obtiene Id de la votacion al guardar
+                votatonId = await _votationSevice.CreateVotation(request.Votation);
 
-                if (!saved)
+                if (votatonId == 0)
                     throw new ErrorException("01", "No se pudo crear la votación");
 
+                // a guardar en el detalle de la votacion y el candidato
+
+                saved = await _votationSevice.AddVotationCandidate(request.Candidates, votatonId);
+
+                if (!saved)
+                    throw new ErrorException("01", "No se crearon los registros de votación");
+
             }
-            else 
+            else
             {
                 throw new ErrorException("09", "Código de tipo de votación no válido");
             }

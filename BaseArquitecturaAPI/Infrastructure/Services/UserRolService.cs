@@ -1,6 +1,7 @@
 ﻿using Application.Common.Interfaces;
 using Domain.Entities;
 using Infrastructure.Database;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace Infrastructure.Services
                 if (rol == null)
                     return false;
 
-                var userRol = new UserRol { UserId = userId, RolId = rolId};
+                var userRol = new UserRol { UserId = userId, RolId = rolId };
                 _context.Add(userRol);
             }
 
@@ -67,6 +68,20 @@ namespace Infrastructure.Services
                 return false;
 
             return true;
+        }
+
+        public async Task<Rol> GetRolByUserId(int userId)
+        {
+            var rol = await (from ur in _context.UserRols
+                             join r in _context.Rols
+                             on ur.RolId equals r.Id
+                             where ur.UserId == userId
+                             select new Rol
+                             {
+                                 RolName = r.RolName
+                             }).FirstOrDefaultAsync();
+
+            return rol;
         }
     }
 }

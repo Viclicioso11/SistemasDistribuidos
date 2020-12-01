@@ -20,16 +20,16 @@ namespace Infrastructure.Services
             _context = context;
         }
 
-        public async Task<bool> CreateUser(User user)
+        public async Task<int> CreateUser(User user)
         {
             _context.Add(user);
 
             var result = await _context.SaveChangesAsync();
 
             if (result == 0)
-                return false;
+                return 0;
 
-            return true;
+            return user.Id;
         }
 
         public async Task<bool> DeleteUsers(List<int> ids)

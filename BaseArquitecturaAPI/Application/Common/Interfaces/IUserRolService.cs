@@ -11,5 +11,7 @@ namespace Application.Common.Interfaces
         public Task<bool> CreateUserRol(int userId, List<int> rolIds);
 
         public Task<bool> DeleteUserRol(int userId, int rolId);
+
+        public Task<Rol> GetRolByUserId(int userId);
     }
 }

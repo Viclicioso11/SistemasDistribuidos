@@ -38,8 +38,9 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "city_id")]
         public int CityId { get; set; }
 
-        [DataMember(Name = "votation_type")]
-        public VotationTypeModelJson VotationType { get; set; }
+        [Required]
+        [DataMember(Name = "candidates")]
+        public List<int> Candidates { get; set; }
 
     }
 }

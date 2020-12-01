@@ -27,5 +27,8 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "password")]
         public string Password { get; set; }
 
+        [DataMember(Name = "rol_id")]
+        public int RolId { get; set; }
+
     }
 }
