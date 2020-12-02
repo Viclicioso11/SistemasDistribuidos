@@ -78,6 +78,7 @@ namespace Infrastructure.Services
                              where ur.UserId == userId
                              select new Rol
                              {
+                                 Id = r.Id,
                                  RolName = r.RolName
                              }).FirstOrDefaultAsync();
 

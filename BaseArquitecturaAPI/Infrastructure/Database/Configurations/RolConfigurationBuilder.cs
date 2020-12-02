@@ -24,6 +24,12 @@ namespace Infrastructure.Database.Configurations
                 .IsRequired()
                 .HasMaxLength(15)
                 .HasColumnType("varchar(15)");
+
+            builder
+                .HasData(
+                new Rol { Id = 1, RolName = "Admin" },
+                new Rol { Id = 2, RolName = "User" }
+                );
         }
     }
 }

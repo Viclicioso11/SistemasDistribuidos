@@ -21,5 +21,9 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "user_id")]
         public int UserId { get; set; }
 
+        [Required]
+        [DataMember(Name = "votation_id")]
+        public int VotationId { get; set; }
+
     }
 }

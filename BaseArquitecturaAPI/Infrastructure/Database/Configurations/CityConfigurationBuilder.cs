@@ -193,5 +193,5 @@ namespace Infrastructure.Database.Configurations
              new City { Id = 134, CityName = "DefectoNicaragua", CityCode = "0", StateId = 16 }
             );
         }
-    }                       
+    }
 }

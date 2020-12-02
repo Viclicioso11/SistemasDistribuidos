@@ -28,6 +28,7 @@ namespace Infrastructure
             services.AddTransient<IRolService, RolService>();
             services.AddTransient<IRolOptionService, RolOptionService>();
             services.AddTransient<IUserRolService, UserRolService>();
+            services.AddTransient<IVoteService, VoteService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(configuration.GetConnectionString("votationDb")));
