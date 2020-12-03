@@ -21,6 +21,10 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "political_party_abreviation")]
         public string Abreviation { get; set; }
 
+        [Required]
+        [DataMember(Name = "image_url")]
+        public string ImageUrl { get; set; }
+
 
         [DataMember(Name = "candidates")]
         public IEnumerable<CandidateModelJson> Candidates { get; set; }

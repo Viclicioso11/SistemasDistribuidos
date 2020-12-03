@@ -31,6 +31,13 @@ namespace Infrastructure.Database.Configurations
                 .IsRequired()
                 .HasMaxLength(6)
                 .HasColumnType("varchar(6)");
+
+            builder
+                .Property(v => v.ImageUrl)
+                .HasColumnName("ImageUrl")
+                .IsRequired()
+                .HasMaxLength(6)
+                .HasColumnType("varchar(200)");
         }
     }
 }

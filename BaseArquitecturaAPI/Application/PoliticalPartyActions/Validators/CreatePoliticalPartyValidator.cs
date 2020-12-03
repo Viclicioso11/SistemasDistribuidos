@@ -25,6 +25,10 @@ namespace Application.PoliticalPartyActions.Validators
                 .NotEmpty()
                 .MaximumLength(60);
 
+                RuleFor(c => c.PoliticalParty.ImageUrl)
+                .NotNull()
+                .NotEmpty()
+                .MaximumLength(200);
             });
         }
     }

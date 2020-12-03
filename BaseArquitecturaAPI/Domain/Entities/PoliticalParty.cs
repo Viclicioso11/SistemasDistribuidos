@@ -12,6 +12,8 @@ namespace Domain.Entities
 
         public string Abreviation { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public IEnumerable<Candidate> Candidates { get; set; }
     }
 }

@@ -50,7 +50,8 @@ namespace Infrastructure.Services
                     {
                         Abreviation = p.Abreviation,
                         Id = p.Id,
-                        PoliticalPartyName = p.PoliticalPartyName
+                        PoliticalPartyName = p.PoliticalPartyName,
+                        ImageUrl = p.ImageUrl
                     })
                     .ToListAsync();
 
@@ -72,7 +73,8 @@ namespace Infrastructure.Services
                     {
                         Abreviation = p.Abreviation,
                         Id = p.Id,
-                        PoliticalPartyName = p.PoliticalPartyName
+                        PoliticalPartyName = p.PoliticalPartyName,
+                        ImageUrl = p.ImageUrl
                     })
                     .ToListAsync();
 
@@ -95,7 +97,8 @@ namespace Infrastructure.Services
                                 {
                                     Abreviation = p.Abreviation,
                                     PoliticalPartyName = p.PoliticalPartyName,
-                                    Id = p.Id
+                                    Id = p.Id,
+                                    ImageUrl = p.ImageUrl
 
                                 }).FirstOrDefaultAsync();
 
@@ -129,6 +132,7 @@ namespace Infrastructure.Services
 
             politicalPartyToEdit.Abreviation = politicalParty.Abreviation;
             politicalPartyToEdit.PoliticalPartyName = politicalParty.PoliticalPartyName;
+            politicalPartyToEdit.ImageUrl = politicalParty.ImageUrl;
 
             _context.PoliticalParties.Update(politicalPartyToEdit);
 

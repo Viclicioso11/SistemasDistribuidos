@@ -16,6 +16,8 @@ namespace Application.PoliticalPartyActions.Dtos
 
         public string Abreviation { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public IEnumerable<CandidateDto> Candidates { get; set; }
 
         public void Mapping(Profile profile)
