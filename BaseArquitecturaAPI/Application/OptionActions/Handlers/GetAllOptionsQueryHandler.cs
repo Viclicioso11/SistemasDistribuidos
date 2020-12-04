@@ -1,14 +1,9 @@
-﻿using Application.CandidateActions.Dtos;
-using Application.CandidateActions.Querys;
-using Application.Common.Interfaces;
+﻿using Application.Common.Interfaces;
 using Application.Common.Pager;
 using Application.OptionActions.Dtos;
 using Application.OptionActions.Querys;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

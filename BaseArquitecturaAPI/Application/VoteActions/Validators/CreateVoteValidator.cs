@@ -1,10 +1,5 @@
-﻿using Application.OptionActions.Commands;
-using Application.RolActions.Commands;
-using Application.VoteActions.Commands;
+﻿using Application.VoteActions.Commands;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.RolActions.Validators
 {

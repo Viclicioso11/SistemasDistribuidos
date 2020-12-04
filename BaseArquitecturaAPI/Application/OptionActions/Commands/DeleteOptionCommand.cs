@@ -1,8 +1,5 @@
-﻿using Application.CandidateActions.Dtos;
-using MediatR;
-using System;
+﻿using MediatR;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Application.OptionActions.Commands
 {

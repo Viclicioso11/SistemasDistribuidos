@@ -1,10 +1,6 @@
-﻿using Application.CandidateActions.Dtos;
-using Application.Common.Pager;
+﻿using Application.Common.Pager;
 using Application.OptionActions.Dtos;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.OptionActions.Querys
 {

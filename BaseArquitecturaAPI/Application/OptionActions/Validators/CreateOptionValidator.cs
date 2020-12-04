@@ -1,8 +1,5 @@
 ﻿using Application.OptionActions.Commands;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.OptionActions.Validators
 {

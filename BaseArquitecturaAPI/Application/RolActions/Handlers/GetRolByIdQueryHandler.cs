@@ -1,16 +1,9 @@
-﻿using Application.CandidateActions.Dtos;
-using Application.CandidateActions.Querys;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.Common.Interfaces;
-using Application.OptionActions.Dtos;
-using Application.OptionActions.Querys;
 using Application.RolActions.Dtos;
 using Application.RolActions.Querys;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

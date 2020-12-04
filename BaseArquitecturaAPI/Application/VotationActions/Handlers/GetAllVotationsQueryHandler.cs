@@ -3,9 +3,6 @@ using Application.Common.Pager;
 using Application.VotationActions.Dtos;
 using Application.VotationActions.Querys;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

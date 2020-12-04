@@ -1,13 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Application.CatalogActions.Querys;
 using Application.Common.Exceptions;
-using Application.Common.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BaseArquitecturaAPI.Controllers
 {

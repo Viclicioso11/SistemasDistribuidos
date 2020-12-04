@@ -1,11 +1,8 @@
 ﻿using Application.Common.Mappings;
 using Application.OptionActions.Dtos;
-using Application.RolOptionActions.Dtos;
 using AutoMapper;
 using Domain.Entities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Application.RolActions.Dtos
 {

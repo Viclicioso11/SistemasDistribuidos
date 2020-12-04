@@ -8,13 +8,8 @@ using Application;
 using Infrastructure;
 using BaseArquitecturaAPI.ApiExceptionFilter;
 using AutoMapper;
-using System.Reflection;
 using BaseArquitecturaAPI.Policies;
 using BaseArquitecturaAPI.Middleware;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Microsoft.AspNetCore.Http;
 
 namespace BaseArquitecturaAPI
 {
