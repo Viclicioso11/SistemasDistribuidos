@@ -4,9 +4,6 @@ using Application.UserActions.Commands;
 using Application.UserActions.Dtos;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -31,7 +28,7 @@ namespace Application.UserActions.Handlers
             var userId = await _service.AuthenticateUser(request.Email, request.Password);
 
             if (userId == 0)
-                return null;
+                return new AuthenticationDto { Id = 0, UserId = 0 };
 
             //si las credenciales son correctas, se envia el correo y se guarda en tfa
 

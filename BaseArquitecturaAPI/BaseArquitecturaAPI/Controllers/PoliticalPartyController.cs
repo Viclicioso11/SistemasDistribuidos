@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Application.Common.Exceptions;
 using Application.PoliticalPartyActions.Commands;
 using Application.PoliticalPartyActions.Querys;
 using AutoMapper;
@@ -31,6 +29,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var politicalParties = await Mediator.Send(new GetAllPoliticalPartiesQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
 
             if (politicalParties == null)
@@ -46,6 +50,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var politicalParty = await Mediator.Send(new GetPoliticalPartyByIdQuery { Id = id });
 
             if (politicalParty == null)
@@ -61,6 +71,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             body.Id = id;
             var response = await Mediator.Send(new UpdatePoliticalPartyCommand { PoliticalParty = _mapper.Map<PoliticalParty>(body) });
@@ -78,6 +93,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             var response = await Mediator.Send(new CreatePoliticalPartyCommand { PoliticalParty = _mapper.Map<PoliticalParty>(body) });
 

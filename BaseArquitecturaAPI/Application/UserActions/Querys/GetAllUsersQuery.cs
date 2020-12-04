@@ -1,10 +1,7 @@
 ﻿using Application.Common.Pager;
 using Application.UserActions.Dtos;
-using Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Application.UserActions.Querys
 {

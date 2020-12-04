@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Application.Common.Exceptions;
 using Application.VotationActions.Commands;
 using Application.VotationActions.Querys;
 using AutoMapper;
@@ -27,6 +28,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var users = await Mediator.Send(new GetAllVotationsQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
 
             if (users == null)
@@ -43,6 +50,11 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var votation = await Mediator.Send(new GetVotationByIdQuery { VotationId = id });
 
             return Ok(votation);
@@ -57,6 +69,11 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var response = await Mediator.Send(new UpdateVotationCommand { Votation = _mapper.Map<Votation>(body) });
 
             return Ok(response);
@@ -69,6 +86,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             var response = await Mediator.Send(new UpdateVotationStatusCommand { VotationId = id, VotationStatus = status });
 
@@ -83,6 +105,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             var response = await Mediator.Send(new CreateVotationCommand {Votation = _mapper.Map<Votation>(body), Candidates = body.Candidates});
 

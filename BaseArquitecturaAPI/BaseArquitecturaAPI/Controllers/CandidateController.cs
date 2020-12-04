@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.CandidateActions.Commands;
 using Application.CandidateActions.Querys;
+using Application.Common.Exceptions;
 using AutoMapper;
 using BaseArquitecturaAPI.Models;
 using Domain.Entities;
@@ -31,6 +32,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var candidates = await Mediator.Send(new GetAllCandidatesQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
 
             if (candidates == null)
@@ -46,6 +53,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var candidate = await Mediator.Send(new GetCandidateByIdQuery { Id = id });
 
             if (candidate == null)
@@ -61,6 +74,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             body.Id = id;
             var response = await Mediator.Send(new UpdateCandidateCommand { Candidate = _mapper.Map<Candidate>(body) });
@@ -78,6 +96,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             var response = await Mediator.Send(new CreateCandidateCommand { Candidate = _mapper.Map<Candidate>(body) });
 

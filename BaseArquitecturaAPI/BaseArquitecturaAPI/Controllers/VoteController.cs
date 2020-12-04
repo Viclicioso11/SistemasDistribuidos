@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Application.Common.Exceptions;
 using Application.VoteActions.Commands;
 using Application.VoteActions.Querys;
 using AutoMapper;
@@ -28,6 +29,11 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var votation = await Mediator.Send(new GetVotesCountByVotationIdQuery { VotationId = id });
 
             return Ok(votation);
@@ -41,6 +47,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             var response = await Mediator.Send(new CreateVoteCommand {Vote = _mapper.Map<Vote>(body)});
 

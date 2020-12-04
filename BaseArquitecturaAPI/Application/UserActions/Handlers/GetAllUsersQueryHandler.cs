@@ -1,14 +1,9 @@
-﻿using Application.Common.Exceptions;
-using Application.Common.Interfaces;
+﻿using Application.Common.Interfaces;
 using Application.Common.Pager;
 using Application.UserActions.Dtos;
 using Application.UserActions.Querys;
 using AutoMapper;
-using Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

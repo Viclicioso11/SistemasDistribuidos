@@ -1,9 +1,5 @@
 ﻿using Application.UserActions.Commands;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
 
 namespace Application.UserActions.Validators
 {

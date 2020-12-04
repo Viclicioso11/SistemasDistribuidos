@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Application.Common.Exceptions;
 using Application.UserActions.Commands;
 using Application.UserActions.Querys;
 using Application.UserRolActions.Commands;
-using Application.VotationActions.Commands;
-using Application.VotationActions.Querys;
 using AutoMapper;
 using BaseArquitecturaAPI.Models;
 using Domain.Entities;
@@ -34,6 +30,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var users = await Mediator.Send(new GetAllUsersQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
 
             if (users == null)
@@ -49,6 +51,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var user = await Mediator.Send(new GetUserByIdQuery { Id = id });
 
             if (user == null)
@@ -64,6 +72,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             body.Id = id;
             var response = await Mediator.Send(new UpdateUserCommand { User = _mapper.Map<User>(body) });
@@ -82,6 +95,11 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var response = await Mediator.Send(new CreateUserCommand { User = _mapper.Map<User>(body), RolId = body.RolId });
 
             if(response !=null)
@@ -97,6 +115,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             var response = await Mediator.Send(new DeleteUserCommand { Ids = body.Ids });
 
@@ -152,6 +175,11 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var response = await Mediator.Send(new CreateUserRolCommand { IdUser = body.UserId, RolIds = body.RolIds });
 
             if (!response)
@@ -170,6 +198,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             var response = await Mediator.Send(new DeleteUserRolCommand { UserId = body.UserId, RolId = body.RolId });
 

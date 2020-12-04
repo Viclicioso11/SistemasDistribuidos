@@ -1,9 +1,4 @@
-﻿using Application.CandidateActions.Dtos;
-using Domain.Entities;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
 namespace Application.UserRolActions.Commands
 {

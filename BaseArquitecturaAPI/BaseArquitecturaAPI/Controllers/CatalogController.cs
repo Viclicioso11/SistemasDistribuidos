@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Application.CatalogActions.Querys;
 using Application.Common.Exceptions;
-using Application.UserActions.Commands;
-using Application.UserActions.Querys;
-using Application.VotationActions.Commands;
-using Application.VotationActions.Querys;
+using Application.Common.Helpers;
 using AutoMapper;
-using BaseArquitecturaAPI.Models;
-using Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
@@ -35,6 +27,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var city = await Mediator.Send(new GetCityByIdQuery { Id = id });
 
             if (city == null)
@@ -72,6 +69,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var country = await Mediator.Send(new GetCountryByIdQuery { Id = id });
 
             if (country == null)
@@ -87,6 +90,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var cities = await Mediator.Send(new GetAllCountriesQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
 
             if (cities == null)
@@ -102,6 +111,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var state = await Mediator.Send(new GetStateByIdQuery { Id = id });
 
             if (state == null)
@@ -117,6 +132,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var cities = await Mediator.Send(new GetAllStatesQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
 
             if (cities == null)
@@ -124,7 +145,6 @@ namespace BaseArquitecturaAPI.Controllers
 
             return Ok(cities);
         }
-
 
     }
 }

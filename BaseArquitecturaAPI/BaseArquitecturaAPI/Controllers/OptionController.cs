@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application.CandidateActions.Commands;
-using Application.CandidateActions.Querys;
+﻿using System.Threading.Tasks;
+using Application.Common.Exceptions;
 using Application.OptionActions.Commands;
 using Application.OptionActions.Querys;
-using Application.RolActions.Commands;
-using Application.RolActions.Querys;
 using AutoMapper;
 using BaseArquitecturaAPI.Models;
 using Domain.Entities;
@@ -35,6 +29,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var options = await Mediator.Send(new GetAllOptionsQuery { ActualPage = page, FilterBy = filter, RecordsByPage = records });
 
             if (options == null)
@@ -50,6 +50,12 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var option = await Mediator.Send(new GetOptionByIdQuery { Id = id });
 
             if (option == null)
@@ -65,6 +71,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             body.Id = id;
             var response = await Mediator.Send(new UpdateOptionCommand { Option = _mapper.Map<Option>(body) });
@@ -83,6 +94,11 @@ namespace BaseArquitecturaAPI.Controllers
                 return BadRequest();
             }
 
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
+
             var response = await Mediator.Send(new CreateOptionCommand { Option = _mapper.Map<Option>(body) });
 
             if(response !=null)
@@ -97,6 +113,11 @@ namespace BaseArquitecturaAPI.Controllers
             {
                 return BadRequest();
             }
+
+            var userId = HttpContext.Items["UserId"] == null ? "0" : HttpContext.Items["UserId"].ToString();
+
+            if (userId.Equals("0"))
+                throw new UnauthorizedException("Usuario no autorizado");
 
             var response = await Mediator.Send(new DeleteOptionCommand { Ids = body.Ids });
 
