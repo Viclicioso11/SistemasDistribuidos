@@ -16,6 +16,10 @@ namespace Application.Common.Interfaces
 
         public Task<bool> DeleteUsers(List<int> ids);
 
+        public Task<bool> ValidateUserIdentification(string identification);
+
+        public Task<bool> ValidateUserEmail(string email);
+
         public Task<int> CreateUser(User user);
 
         public Task<GenericPager<UserDto>> GetAllUser(string filterBy, int page, int recordsByPage);

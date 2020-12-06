@@ -20,6 +20,16 @@ namespace Application.UserActions.Handlers
         }
         public async Task<UserDto> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
+            var userExists = await _service.ValidateUserIdentification(request.User.Identification);
+
+            if (!userExists)
+                throw new ErrorException("05", "Ya existe un usuario con la identificación presentada");
+
+            var emailExists = await _service.ValidateUserEmail(request.User.Email);
+
+            if (!emailExists)
+                throw new ErrorException("05", "Ya existe un usuario con el correo electrónico proporcionado");
+                
             var result = await _service.UpdateUser(request.User);
 
             if (result == null)

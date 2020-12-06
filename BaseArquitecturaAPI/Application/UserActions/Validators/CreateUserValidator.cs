@@ -11,10 +11,6 @@ namespace Application.UserActions.Validators
             RuleFor(v => v.User)
                 .NotNull();
 
-            RuleFor(c => c.RolId)
-                .NotEmpty()
-                .NotNull();
-
             When(c => c.User != null, () =>
             {
                 RuleFor(c => c.User.Email)

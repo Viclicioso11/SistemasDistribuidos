@@ -166,7 +166,24 @@ namespace Infrastructure.Services
             throw new NotImplementedException();
         }
 
+        public async Task<bool> ValidateUserIdentification(string identification)
+        {
+            var user = await _context.Users.Where(u => u.Identification.Equals(identification)).FirstOrDefaultAsync();
 
+            if (user == null)
+                return true;
 
+            return false;
+        }
+
+        public async Task<bool> ValidateUserEmail(string email)
+        {
+            var user = await _context.Users.Where(u => u.Email.Equals(email)).FirstOrDefaultAsync();
+
+            if (user == null)
+                return true;
+
+            return false;
+        }
     }
 }
