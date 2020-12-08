@@ -21,7 +21,8 @@ namespace Application.CandidateActions.Dtos
 
         public string PoliticalPartyName { get; set; }
 
-        public int PoliticalPartyId { get; set; }
+        public int PoliticalPartyId { get; set; } 
+        public string PoliticalPartyImageUrl { get; set; }
 
 
         public void Mapping(Profile profile)

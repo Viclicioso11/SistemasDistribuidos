@@ -150,6 +150,7 @@ namespace Infrastructure.Services
                                                              PoliticalPartyId = c.PoliticalPartyId,
                                                              PoliticalPartyName = p.PoliticalPartyName,
                                                              Id = c.Id,
+                                                             PoliticalPartyImageUrl = p.ImageUrl
                                                          }).ToList();
                 }
             }
@@ -226,6 +227,7 @@ namespace Infrastructure.Services
                                        PoliticalPartyId = c.PoliticalPartyId,
                                        PoliticalPartyName = p.PoliticalPartyName,
                                        Id = c.Id,
+                                       PoliticalPartyImageUrl = p.ImageUrl
                                    }).ToList();
 
 
