@@ -130,6 +130,30 @@ namespace Infrastructure.Services
                 information.Next = page < information.TotalPages;
                 information.Previous = page > 1;
             }
+            // para agregar los candidatos a cada votacion de la lista
+            if (information.Results != null || information.Results.Count == 0)
+            {
+                for (int i = 0; i < information.Results.Count; i++)
+                {
+                    information.Results[i].Candidates = (from vd in _context.VotationDetail
+                                                         join c in _context.Candidates
+                                                         on vd.CandidateId equals c.Id
+                                                         join p in _context.PoliticalParties
+                                                         on c.PoliticalPartyId equals p.Id
+                                                         where vd.VotationId == information.Results[i].Id
+                                                         select new CandidateDto
+                                                         {
+                                                             FirstName = c.FirstName,
+                                                             Surname = c.Surname,
+                                                             LastName = c.LastName,
+                                                             MiddleName = c.MiddleName,
+                                                             PoliticalPartyId = c.PoliticalPartyId,
+                                                             PoliticalPartyName = p.PoliticalPartyName,
+                                                             Id = c.Id,
+                                                         }).ToList();
+                }
+            }
+
 
             return information;
         }
@@ -166,43 +190,43 @@ namespace Infrastructure.Services
         {
             //another way
             var votation = await (from v in _context.Votations
-                            join c in _context.Cities
-                            on v.CityId equals c.Id
-                            join t in _context.VotationTypes
-                            on v.VotationTypeId equals t.Id
-                            where v.Id == id
-                            select new VotationDto
-                            {
-                                Id = v.Id,
-                                VotationDescription = v.VotationDescription,
-                                VotationTypeId = t.Id,
-                                VotationTypeName = t.VotationTypeName,
-                                VotationEndDate = v.VotationEndDate,
-                                VotationStartDate = v.VotationStartDate,
-                                VotationStatus = v.VotationStatus,
-                                CityId = c.Id,
-                                CityName = c.CityName
-                            }).FirstOrDefaultAsync();
+                                  join c in _context.Cities
+                                  on v.CityId equals c.Id
+                                  join t in _context.VotationTypes
+                                  on v.VotationTypeId equals t.Id
+                                  where v.Id == id
+                                  select new VotationDto
+                                  {
+                                      Id = v.Id,
+                                      VotationDescription = v.VotationDescription,
+                                      VotationTypeId = t.Id,
+                                      VotationTypeName = t.VotationTypeName,
+                                      VotationEndDate = v.VotationEndDate,
+                                      VotationStartDate = v.VotationStartDate,
+                                      VotationStatus = v.VotationStatus,
+                                      CityId = c.Id,
+                                      CityName = c.CityName
+                                  }).FirstOrDefaultAsync();
 
             if (votation == null)
                 return null;
 
             votation.Candidates = (from vd in _context.VotationDetail
-                                  join c in _context.Candidates
-                                  on vd.CandidateId equals c.Id
-                                  join p in _context.PoliticalParties
-                                  on c.PoliticalPartyId equals p.Id
-                                  where vd.VotationId == id
-                                  select new CandidateDto
-                                  {
-                                      FirstName = c.FirstName,
-                                      Surname = c.Surname,
-                                      LastName = c.LastName,
-                                      MiddleName = c.MiddleName,
-                                      PoliticalPartyId = c.PoliticalPartyId,
-                                      PoliticalPartyName = p.PoliticalPartyName,
-                                      Id = c.Id,
-                                  }).ToList();
+                                   join c in _context.Candidates
+                                   on vd.CandidateId equals c.Id
+                                   join p in _context.PoliticalParties
+                                   on c.PoliticalPartyId equals p.Id
+                                   where vd.VotationId == id
+                                   select new CandidateDto
+                                   {
+                                       FirstName = c.FirstName,
+                                       Surname = c.Surname,
+                                       LastName = c.LastName,
+                                       MiddleName = c.MiddleName,
+                                       PoliticalPartyId = c.PoliticalPartyId,
+                                       PoliticalPartyName = p.PoliticalPartyName,
+                                       Id = c.Id,
+                                   }).ToList();
 
 
             return votation;
