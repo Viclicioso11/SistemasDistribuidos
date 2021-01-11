@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class Rol
     {
-        public int RolId { get; set; }
+        public int Id { get; set; }
 
         public string RolName { get; set; }
 

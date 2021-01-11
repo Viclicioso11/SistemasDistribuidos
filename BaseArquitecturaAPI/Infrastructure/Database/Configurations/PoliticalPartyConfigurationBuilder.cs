@@ -12,7 +12,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<PoliticalParty> builder)
         {
             builder
-              .Property(v => v.PoliticalPartyId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)
@@ -22,8 +22,8 @@ namespace Infrastructure.Database.Configurations
                 .Property(v => v.PoliticalPartyName)
                 .HasColumnName("Name")
                 .IsRequired()
-                .HasMaxLength(30)
-                .HasColumnType("varchar(30)");
+                .HasMaxLength(60)
+                .HasColumnType("varchar(60)");
 
             builder
                 .Property(v => v.Abreviation)
@@ -32,6 +32,12 @@ namespace Infrastructure.Database.Configurations
                 .HasMaxLength(6)
                 .HasColumnType("varchar(6)");
 
+            builder
+                .Property(v => v.ImageUrl)
+                .HasColumnName("ImageUrl")
+                .IsRequired()
+                .HasMaxLength(6)
+                .HasColumnType("varchar(200)");
         }
     }
 }

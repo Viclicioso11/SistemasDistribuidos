@@ -6,11 +6,13 @@ namespace Domain.Entities
 {
     public class PoliticalParty
     {
-        public int PoliticalPartyId { get; set; }
+        public int Id { get; set; }
 
         public string PoliticalPartyName { get; set; }
 
         public string Abreviation { get; set; }
+
+        public string ImageUrl { get; set; }
 
         public IEnumerable<Candidate> Candidates { get; set; }
     }

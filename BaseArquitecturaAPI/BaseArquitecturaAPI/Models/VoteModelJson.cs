@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
 namespace BaseArquitecturaAPI.Models
 {
@@ -11,7 +7,7 @@ namespace BaseArquitecturaAPI.Models
     public class VoteModelJson
     {
         [DataMember(Name = "vote_id")]
-        public int VoteId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [DataMember(Name = "candidate_id")]
@@ -21,10 +17,9 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "user_id")]
         public int UserId { get; set; }
 
-        [DataMember(Name = "user")]
-        public UserModelJson User { get; set; }
+        [Required]
+        [DataMember(Name = "votation_id")]
+        public int VotationId { get; set; }
 
-        [DataMember(Name = "candidate")]
-        public CandidateModelJson Candidate { get; set; }
     }
 }

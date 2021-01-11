@@ -4,10 +4,6 @@ using Application.VotationActions.Dtos;
 using Application.VotationActions.Querys;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -28,7 +24,7 @@ namespace Application.VotationActions.Handlers
             if (votation == null)
                 throw new NotFoundException("Votación no encontrada", request.VotationId);
 
-            return _mapper.Map<VotationDto>(votation);
+            return votation;
         }
     }
 }

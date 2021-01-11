@@ -11,7 +11,8 @@ namespace Application
     { 
         public static IServiceCollection AddApplicationDependencyInjection (this IServiceCollection services)
         {
-            
+            services.AddHttpContextAccessor();
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddMediatR(Assembly.GetExecutingAssembly());

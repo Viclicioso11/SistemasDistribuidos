@@ -4,9 +4,6 @@ using Application.UserActions.Commands;
 using Application.UserActions.Dtos;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,10 +20,20 @@ namespace Application.UserActions.Handlers
         }
         public async Task<UserDto> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
+            var userExists = await _service.ValidateUserIdentification(request.User.Identification);
+
+            if (!userExists)
+                throw new ErrorException("05", "Ya existe un usuario con la identificación presentada");
+
+            var emailExists = await _service.ValidateUserEmail(request.User.Email);
+
+            if (!emailExists)
+                throw new ErrorException("05", "Ya existe un usuario con el correo electrónico proporcionado");
+                
             var result = await _service.UpdateUser(request.User);
 
             if (result == null)
-                throw new ErrorException("02", $"Error tratando de actualizar cliente con Id {request.User.UserId}");
+                throw new ErrorException("02", $"Error tratando de actualizar cliente con Id {request.User.Id}");
 
             return _mapper.Map<UserDto>(request.User);
         }

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
 namespace BaseArquitecturaAPI.Models
 {
@@ -12,7 +10,7 @@ namespace BaseArquitecturaAPI.Models
     {
         
         [DataMember(Name = "votation_id")]
-        public int VotationId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [DataMember(Name = "votation_type_id")]
@@ -38,8 +36,9 @@ namespace BaseArquitecturaAPI.Models
         [DataMember(Name = "city_id")]
         public int CityId { get; set; }
 
-        [DataMember(Name = "votation_type")]
-        public VotationTypeModelJson VotationType { get; set; }
+        [Required]
+        [DataMember(Name = "candidates")]
+        public List<int> Candidates { get; set; }
 
     }
 }

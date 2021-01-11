@@ -83,7 +83,6 @@ namespace Infrastructure.Database
 
         public DbSet<TwoFactorAuthentication> TwoFactorAuthentications { get; set; }
 
-
-
+        public DbSet<VotationDetail> VotationDetail { get; set; }
     }
 }

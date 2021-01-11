@@ -12,7 +12,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<Option> builder)
         {
             builder
-              .Property(v => v.OptionId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)
@@ -22,8 +22,8 @@ namespace Infrastructure.Database.Configurations
                 .Property(v => v.OptionName)
                 .HasColumnName("Name")
                 .IsRequired()
-                .HasMaxLength(15)
-                .HasColumnType("varchar(15)");
+                .HasMaxLength(30)
+                .HasColumnType("varchar(30)");
 
             builder
                 .Property(v => v.OptionDescription)

@@ -12,7 +12,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<State> builder)
         {
             builder
-              .Property(v => v.StateId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)
@@ -33,21 +33,22 @@ namespace Infrastructure.Database.Configurations
 
             builder
                 .HasData(
-                new State { StateId = 1, StateName = "Boaco", CountryId = 1 },
-                new State { StateId = 2, StateName = "Carazo", CountryId = 1 },
-                new State { StateId = 3, StateName = "Chinandega", CountryId = 1 },
-                new State { StateId = 4, StateName = "Chontales", CountryId = 1 },
-                new State { StateId = 5, StateName = "Estelí", CountryId = 1 },
-                new State { StateId = 6, StateName = "Granada", CountryId = 1 },
-                new State { StateId = 7, StateName = "Jinotega", CountryId = 1 },
-                new State { StateId = 8, StateName = "León", CountryId = 1 },
-                new State { StateId = 9, StateName = "Madriz", CountryId = 1 },
-                new State { StateId = 10, StateName = "Managua", CountryId = 1 },
-                new State { StateId = 11, StateName = "Masaya", CountryId = 1 },
-                new State { StateId = 12, StateName = "Matagalpa", CountryId = 1 },
-                new State { StateId = 13, StateName = "Nueva Segovia", CountryId = 1 },
-                new State { StateId = 14, StateName = "Río San Juan", CountryId = 1 },
-                new State { StateId = 15, StateName = "Rivas", CountryId = 1 }
+                new State { Id = 1, StateName = "Boaco", CountryId = 1 },
+                new State { Id = 2, StateName = "Carazo", CountryId = 1 },
+                new State { Id = 3, StateName = "Chinandega", CountryId = 1 },
+                new State { Id = 4, StateName = "Chontales", CountryId = 1 },
+                new State { Id = 5, StateName = "Estelí", CountryId = 1 },
+                new State { Id = 6, StateName = "Granada", CountryId = 1 },
+                new State { Id = 7, StateName = "Jinotega", CountryId = 1 },
+                new State { Id = 8, StateName = "León", CountryId = 1 },
+                new State { Id = 9, StateName = "Madriz", CountryId = 1 },
+                new State { Id = 10, StateName = "Managua", CountryId = 1 },
+                new State { Id = 11, StateName = "Masaya", CountryId = 1 },
+                new State { Id = 12, StateName = "Matagalpa", CountryId = 1 },
+                new State { Id = 13, StateName = "Nueva Segovia", CountryId = 1 },
+                new State { Id = 14, StateName = "Río San Juan", CountryId = 1 },
+                new State { Id = 15, StateName = "Rivas", CountryId = 1 },
+                new State { Id = 16, StateName = "Defecto", CountryId = 1 }
 
                 );
         }

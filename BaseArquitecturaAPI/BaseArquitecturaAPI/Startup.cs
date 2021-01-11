@@ -8,8 +8,8 @@ using Application;
 using Infrastructure;
 using BaseArquitecturaAPI.ApiExceptionFilter;
 using AutoMapper;
-using System.Reflection;
 using BaseArquitecturaAPI.Policies;
+using BaseArquitecturaAPI.Middleware;
 
 namespace BaseArquitecturaAPI
 {
@@ -37,6 +37,8 @@ namespace BaseArquitecturaAPI
 
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddCors();
+
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
@@ -52,7 +54,14 @@ namespace BaseArquitecturaAPI
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseJwtMiddleware();
+
+            app.UseRouting();           
+
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseAuthorization();
 
@@ -60,6 +69,8 @@ namespace BaseArquitecturaAPI
             {
                 endpoints.MapControllers();
             });
+
+            
         }
     }
 }

@@ -29,6 +29,11 @@ namespace BaseArquitecturaAPI.ApiExceptionFilter
             {
                 statusCode = HttpStatusCode.InternalServerError;
             }
+            if (context.Exception is UnauthorizedException)
+            {
+                statusCode = HttpStatusCode.Unauthorized;
+            }
+
 
 
             context.HttpContext.Response.ContentType = "application/json";

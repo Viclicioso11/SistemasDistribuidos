@@ -12,7 +12,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<Rol> builder)
         {
             builder
-              .Property(v => v.RolId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)
@@ -24,6 +24,12 @@ namespace Infrastructure.Database.Configurations
                 .IsRequired()
                 .HasMaxLength(15)
                 .HasColumnType("varchar(15)");
+
+            builder
+                .HasData(
+                new Rol { Id = 1, RolName = "Admin" },
+                new Rol { Id = 2, RolName = "User" }
+                );
         }
     }
 }

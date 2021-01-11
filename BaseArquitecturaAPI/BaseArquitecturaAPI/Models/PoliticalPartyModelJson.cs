@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
+
 
 namespace BaseArquitecturaAPI.Models
 {
@@ -11,7 +9,7 @@ namespace BaseArquitecturaAPI.Models
     public class PoliticalPartyModelJson
     {
         [DataMember(Name = "political_party_id")]
-        public int PoliticalPartyId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [DataMember(Name = "political_party_name")]
@@ -20,6 +18,10 @@ namespace BaseArquitecturaAPI.Models
         [Required]
         [DataMember(Name = "political_party_abreviation")]
         public string Abreviation { get; set; }
+
+        [Required]
+        [DataMember(Name = "image_url")]
+        public string ImageUrl { get; set; }
 
 
         [DataMember(Name = "candidates")]

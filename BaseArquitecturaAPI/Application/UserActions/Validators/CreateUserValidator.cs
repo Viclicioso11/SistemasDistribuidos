@@ -1,8 +1,5 @@
 ﻿using Application.UserActions.Commands;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.UserActions.Validators
 {
@@ -10,39 +7,39 @@ namespace Application.UserActions.Validators
     {
         public CreateUserValidator()
         {
-            RuleFor(c => c.User.Email)
+
+            RuleFor(v => v.User)
+                .NotNull();
+
+            When(c => c.User != null, () =>
+            {
+                RuleFor(c => c.User.Email)
                 .EmailAddress()
                 .NotEmpty()
                 .NotNull()
                 .MaximumLength(50);
 
-            RuleFor(c => c.User.Identification)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(20);
+                RuleFor(c => c.User.Identification)
+                    .NotEmpty()
+                    .NotNull()
+                    .MaximumLength(20);
 
-            RuleFor(c => c.User.FirstName)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(15);
+                RuleFor(c => c.User.Names)
+                    .NotEmpty()
+                    .NotNull()
+                    .MaximumLength(50);
 
-            RuleFor(c => c.User.MiddleName)
-                .MaximumLength(15);
+                RuleFor(c => c.User.LastNames)
+                    .NotEmpty()
+                    .NotNull()
+                    .MaximumLength(50);
 
-            RuleFor(c => c.User.LastName)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(15);
+                RuleFor(c => c.User.Password)
+                    .NotEmpty()
+                    .NotNull()
+                    .MaximumLength(20);
+            });
 
-            RuleFor(c => c.User.Surname)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(20);
-
-            RuleFor(c => c.User.Password)
-                .NotEmpty()
-                .NotNull()
-                .MaximumLength(20);
         }
     }
 }

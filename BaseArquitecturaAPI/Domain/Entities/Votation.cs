@@ -6,7 +6,7 @@ namespace Domain.Entities
 {
     public class Votation
     {
-        public int VotationId { get; set; }
+        public int Id { get; set; }
 
         public int VotationTypeId { get; set; }
 
@@ -24,6 +24,7 @@ namespace Domain.Entities
 
         public VotationType VotationType { get; set; }
 
+        public IEnumerable<Vote> Votes { get; set; }
         public IEnumerable<VotationDetail> VotationDetails { get; set; }
 
         public IEnumerable<VoteAudit> VoteAudits { get; set; }

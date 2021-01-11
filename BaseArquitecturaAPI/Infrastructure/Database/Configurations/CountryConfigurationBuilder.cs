@@ -12,7 +12,7 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<Country> builder)
         {
             builder
-              .Property(v => v.CountryId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)
@@ -27,7 +27,7 @@ namespace Infrastructure.Database.Configurations
 
             builder
                 .HasData(
-                    new Country { CountryId = 1, CountryName = "Nicaragua" });
+                    new Country { Id = 1, CountryName = "Nicaragua" });
         }
     }
 }

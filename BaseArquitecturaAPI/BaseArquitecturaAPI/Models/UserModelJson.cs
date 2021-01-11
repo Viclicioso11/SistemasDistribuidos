@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace BaseArquitecturaAPI.Models
 {
@@ -10,28 +6,25 @@ namespace BaseArquitecturaAPI.Models
     public class UserModelJson
     {
         [DataMember(Name = "id")]
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         [DataMember(Name = "identification")]
         public string Identification { get; set; }
 
-        [DataMember(Name = "first_name")]
-        public string FirstName { get; set; }
+        [DataMember(Name = "names")]
+        public string Names { get; set; }
 
-        [DataMember(Name = "middlename")]
-        public string MiddleName { get; set; }
-
-        [DataMember(Name = "last_name")]
-        public string LastName { get; set; }
-
-        [DataMember(Name = "surname")]
-        public string Surname { get; set; }
+        [DataMember(Name = "last_names")]
+        public string LastNames { get; set; }
 
         [DataMember(Name = "email")]
         public string Email { get; set; }
 
         [DataMember(Name = "password")]
         public string Password { get; set; }
+
+        [DataMember(Name = "rol_id")]
+        public int RolId { get; set; }
 
     }
 }

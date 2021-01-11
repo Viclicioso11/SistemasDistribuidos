@@ -6,11 +6,15 @@ namespace Domain.Entities
 {
     public class Vote
     {
-        public int VoteId { get; set; }
+        public int Id { get; set; }
 
         public User User { get; set; }
 
         public Candidate Candidate { get; set; }
+
+        public Votation Votation { get; set; }
+
+        public int VotationId { get; set; }
 
         public int UserId { get; set; }
 

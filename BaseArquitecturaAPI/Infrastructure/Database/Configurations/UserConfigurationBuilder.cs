@@ -12,39 +12,25 @@ namespace Infrastructure.Database.Configurations
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder
-              .Property(v => v.UserId)
+              .Property(v => v.Id)
               .HasColumnName("Id")
               .IsRequired()
               .UseIdentityColumn(1, 1)
               .HasColumnType("int");
 
             builder
-                .Property(v => v.LastName)
-                .HasColumnName("LastName")
+                .Property(v => v.LastNames)
+                .HasColumnName("LastNames")
                 .IsRequired()
-                .HasMaxLength(15)
-                .HasColumnType("varchar(15)");
+                .HasMaxLength(50)
+                .HasColumnType("varchar(50)");
 
             builder
-                .Property(v => v.FirstName)
-                .HasColumnName("FirstName")
+                .Property(v => v.Names)
+                .HasColumnName("Names")
                 .IsRequired()
-                .HasMaxLength(15)
-                .HasColumnType("varchar(15)");
-
-            builder
-                .Property(v => v.MiddleName)
-                .HasColumnName("MiddleName")
-                .HasMaxLength(15)
-                .IsRequired()
-                .HasColumnType("varchar(15)");
-
-            builder
-                .Property(v => v.Surname)
-                .HasColumnName("Surname")
-                .HasMaxLength(15)
-                .IsRequired()
-                .HasColumnType("varchar(15)");
+                .HasMaxLength(50)
+                .HasColumnType("varchar(50)");
 
             builder
                 .Property(v => v.Status)

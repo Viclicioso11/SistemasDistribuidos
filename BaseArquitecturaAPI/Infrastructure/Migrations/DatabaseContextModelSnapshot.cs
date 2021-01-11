@@ -21,7 +21,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Candidate", b =>
                 {
-                    b.Property<int>("CandidateId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -61,7 +61,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("varchar(15)")
                         .HasMaxLength(15);
 
-                    b.HasKey("CandidateId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PoliticalPartyId");
 
@@ -70,7 +70,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.CandidateAudit", b =>
                 {
-                    b.Property<int>("CandidateAuditId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -95,7 +95,7 @@ namespace Infrastructure.Migrations
                         .HasColumnName("StatusChangedAt")
                         .HasColumnType("datetime");
 
-                    b.HasKey("CandidateAuditId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ChangesMadeByUserId");
 
@@ -104,7 +104,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.City", b =>
                 {
-                    b.Property<int>("CityId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -121,13 +121,13 @@ namespace Infrastructure.Migrations
                     b.Property<string>("CityName")
                         .IsRequired()
                         .HasColumnName("Name")
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("varchar(30)")
                         .HasMaxLength(20);
 
                     b.Property<int>("StateId")
                         .HasColumnType("int");
 
-                    b.HasKey("CityId");
+                    b.HasKey("Id");
 
                     b.HasIndex("StateId");
 
@@ -136,16 +136,947 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            CityId = 1,
+                            Id = 1,
                             CityCode = "361",
                             CityName = "Boaco",
                             StateId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CityCode = "362",
+                            CityName = "Camoapa",
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityCode = "363",
+                            CityName = "Santa Lucía",
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CityCode = "364",
+                            CityName = "San José del Remate",
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CityCode = "365",
+                            CityName = "San Lorenzo",
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CityCode = "366",
+                            CityName = "Teustepe",
+                            StateId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CityCode = "041",
+                            CityName = "Jinotepe",
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CityCode = "042",
+                            CityName = "Diriamba",
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CityCode = "043",
+                            CityName = "San Marcos",
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CityCode = "044",
+                            CityName = "Santa Teresa",
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CityCode = "045",
+                            CityName = "Dolores",
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CityCode = "046",
+                            CityName = "La Paz Carazo",
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CityCode = "047",
+                            CityName = "El Rosario",
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CityCode = "048",
+                            CityName = "La Conquista",
+                            StateId = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CityCode = "081",
+                            CityName = "Chinandega",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CityCode = "082",
+                            CityName = "Corinto",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CityCode = "083",
+                            CityName = "El Realejo",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CityCode = "084",
+                            CityName = "Chichigalpa",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CityCode = "085",
+                            CityName = "Posoltega",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CityCode = "086",
+                            CityName = "El viejo",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CityCode = "087",
+                            CityName = "Puerto Morazán",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CityCode = "088",
+                            CityName = "Somotillo",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CityCode = "089",
+                            CityName = "Villa Nueva",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CityCode = "090",
+                            CityName = "Santo Tomás del Norte",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CityCode = "091",
+                            CityName = "Cinco Pinos",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CityCode = "092",
+                            CityName = "San Fransisco del Norte",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CityCode = "093",
+                            CityName = "San Pedro del Norte",
+                            StateId = 3
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CityCode = "121",
+                            CityName = "Juigalpa",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CityCode = "122",
+                            CityName = "Acoyapa",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CityCode = "123",
+                            CityName = "Santo Tomás",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 31,
+                            CityCode = "124",
+                            CityName = "Villa Sandino",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 32,
+                            CityCode = "125",
+                            CityName = "San Pedro de Lóvago",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 33,
+                            CityCode = "126",
+                            CityName = "La Libertad",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 34,
+                            CityCode = "127",
+                            CityName = "Santo Domingo",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 35,
+                            CityCode = "128",
+                            CityName = "Comalapa",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 36,
+                            CityCode = "129",
+                            CityName = "San Fransisco Cuapa",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 37,
+                            CityCode = "130",
+                            CityName = "El Coral",
+                            StateId = 4
+                        },
+                        new
+                        {
+                            Id = 38,
+                            CityCode = "161",
+                            CityName = "Estelí",
+                            StateId = 5
+                        },
+                        new
+                        {
+                            Id = 39,
+                            CityCode = "162",
+                            CityName = "Pueblo Nuevo",
+                            StateId = 5
+                        },
+                        new
+                        {
+                            Id = 40,
+                            CityCode = "163",
+                            CityName = "Condega",
+                            StateId = 5
+                        },
+                        new
+                        {
+                            Id = 41,
+                            CityCode = "164",
+                            CityName = "San Juan Limay",
+                            StateId = 5
+                        },
+                        new
+                        {
+                            Id = 42,
+                            CityCode = "165",
+                            CityName = "La Trinidad",
+                            StateId = 5
+                        },
+                        new
+                        {
+                            Id = 43,
+                            CityCode = "166",
+                            CityName = "San Nícolas",
+                            StateId = 5
+                        },
+                        new
+                        {
+                            Id = 44,
+                            CityCode = "201",
+                            CityName = "Granada",
+                            StateId = 6
+                        },
+                        new
+                        {
+                            Id = 45,
+                            CityCode = "202",
+                            CityName = "Nandaime",
+                            StateId = 6
+                        },
+                        new
+                        {
+                            Id = 46,
+                            CityCode = "203",
+                            CityName = "Diriomo",
+                            StateId = 6
+                        },
+                        new
+                        {
+                            Id = 47,
+                            CityCode = "204",
+                            CityName = "Diría",
+                            StateId = 6
+                        },
+                        new
+                        {
+                            Id = 48,
+                            CityCode = "241",
+                            CityName = "Jinotega",
+                            StateId = 7
+                        },
+                        new
+                        {
+                            Id = 49,
+                            CityCode = "242",
+                            CityName = "San Rafael del Norte",
+                            StateId = 7
+                        },
+                        new
+                        {
+                            Id = 50,
+                            CityCode = "243",
+                            CityName = "San Sebastián Yalí",
+                            StateId = 7
+                        },
+                        new
+                        {
+                            Id = 51,
+                            CityCode = "244",
+                            CityName = "La Concordia",
+                            StateId = 7
+                        },
+                        new
+                        {
+                            Id = 52,
+                            CityCode = "245",
+                            CityName = "San José de Bocay",
+                            StateId = 7
+                        },
+                        new
+                        {
+                            Id = 53,
+                            CityCode = "246",
+                            CityName = "El Cuá Bocay",
+                            StateId = 7
+                        },
+                        new
+                        {
+                            Id = 54,
+                            CityCode = "247",
+                            CityName = "Santa María Pantasma",
+                            StateId = 7
+                        },
+                        new
+                        {
+                            Id = 55,
+                            CityCode = "281",
+                            CityName = "León",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 56,
+                            CityCode = "283",
+                            CityName = "El Jicaral",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 57,
+                            CityCode = "284",
+                            CityName = "La Paz Centro",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 58,
+                            CityCode = "285",
+                            CityName = "Santa Rosa del Peñón",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 59,
+                            CityCode = "286",
+                            CityName = "Quetzalguaque",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 60,
+                            CityCode = "287",
+                            CityName = "Nagarote",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 61,
+                            CityCode = "288",
+                            CityName = "El Sauce",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 62,
+                            CityCode = "289",
+                            CityName = "Achuapa",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 63,
+                            CityCode = "290",
+                            CityName = "Telica",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 64,
+                            CityCode = "291",
+                            CityName = "Larreynaga Malpaisillo",
+                            StateId = 8
+                        },
+                        new
+                        {
+                            Id = 65,
+                            CityCode = "321",
+                            CityName = "Somoto",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 66,
+                            CityCode = "322",
+                            CityName = "Telpaneca",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 67,
+                            CityCode = "323",
+                            CityName = "San Juan Rio Coco",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 68,
+                            CityCode = "324",
+                            CityName = "Palacagüina",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 69,
+                            CityCode = "325",
+                            CityName = "Yalagüina",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 70,
+                            CityCode = "326",
+                            CityName = "Totogalpa",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 71,
+                            CityCode = "327",
+                            CityName = "San Lucas",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 72,
+                            CityCode = "328",
+                            CityName = "La Sabanas",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 73,
+                            CityCode = "329",
+                            CityName = "San José de Cusmapa",
+                            StateId = 9
+                        },
+                        new
+                        {
+                            Id = 74,
+                            CityCode = "001",
+                            CityName = "Managua",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 75,
+                            CityCode = "002",
+                            CityName = "San Rafael del Sur",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 76,
+                            CityCode = "003",
+                            CityName = "Tipitapa",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 77,
+                            CityCode = "004",
+                            CityName = "Villa Carlos Fonseca",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 78,
+                            CityCode = "005",
+                            CityName = "San Fransisco Libre",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 79,
+                            CityCode = "006",
+                            CityName = "Mateare",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 80,
+                            CityCode = "007",
+                            CityName = "Ticuantepe",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 81,
+                            CityCode = "008",
+                            CityName = "Ciudad Sandino",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 82,
+                            CityCode = "009",
+                            CityName = "El Crucero",
+                            StateId = 10
+                        },
+                        new
+                        {
+                            Id = 83,
+                            CityCode = "401",
+                            CityName = "Masaya",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 84,
+                            CityCode = "402",
+                            CityName = "Nindirí",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 85,
+                            CityCode = "403",
+                            CityName = "Tisma",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 86,
+                            CityCode = "404",
+                            CityName = "Catarina",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 87,
+                            CityCode = "405",
+                            CityName = "San Juan de Oriente",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 88,
+                            CityCode = "406",
+                            CityName = "Niquinohomo",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 89,
+                            CityCode = "407",
+                            CityName = "Nandasmo",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 90,
+                            CityCode = "408",
+                            CityName = "Masatepe",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 91,
+                            CityCode = "409",
+                            CityName = "La Concepción",
+                            StateId = 11
+                        },
+                        new
+                        {
+                            Id = 92,
+                            CityCode = "441",
+                            CityName = "Matagalpa",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 93,
+                            CityCode = "442",
+                            CityName = "San Ramón",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 94,
+                            CityCode = "443",
+                            CityName = "Matiguás",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 95,
+                            CityCode = "444",
+                            CityName = "Muy Muy",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 96,
+                            CityCode = "445",
+                            CityName = "Esquipulas",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 97,
+                            CityCode = "446",
+                            CityName = "San Dionisio",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 98,
+                            CityCode = "447",
+                            CityName = "San Isidro",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 99,
+                            CityCode = "448",
+                            CityName = "Sébaco",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 100,
+                            CityCode = "449",
+                            CityName = "Ciudad Darío",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 101,
+                            CityCode = "450",
+                            CityName = "Terrabona",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 102,
+                            CityCode = "451",
+                            CityName = "Río Blanco",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 103,
+                            CityCode = "452",
+                            CityName = "Tuma La Dalia",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 104,
+                            CityCode = "453",
+                            CityName = "Rancho Grande",
+                            StateId = 12
+                        },
+                        new
+                        {
+                            Id = 105,
+                            CityCode = "481",
+                            CityName = "Ocotal",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 106,
+                            CityCode = "482",
+                            CityName = "Santa María",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 107,
+                            CityCode = "483",
+                            CityName = "Macuelizo",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 108,
+                            CityCode = "484",
+                            CityName = "Dipilto",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 109,
+                            CityCode = "485",
+                            CityName = "Ciudad Antigua",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 110,
+                            CityCode = "486",
+                            CityName = "Mozonte",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 111,
+                            CityCode = "487",
+                            CityName = "San Fernando",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 112,
+                            CityCode = "488",
+                            CityName = "El Jícaro",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 113,
+                            CityCode = "489",
+                            CityName = "Jalapa",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 114,
+                            CityCode = "490",
+                            CityName = "Murra",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 115,
+                            CityCode = "491",
+                            CityName = "Quilalí",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 116,
+                            CityCode = "492",
+                            CityName = "Wiwilí",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 117,
+                            CityCode = "493",
+                            CityName = "Wiwilí Nueva Segovia",
+                            StateId = 13
+                        },
+                        new
+                        {
+                            Id = 118,
+                            CityCode = "521",
+                            CityName = "San Carlos",
+                            StateId = 14
+                        },
+                        new
+                        {
+                            Id = 119,
+                            CityCode = "522",
+                            CityName = "El Castillo",
+                            StateId = 14
+                        },
+                        new
+                        {
+                            Id = 120,
+                            CityCode = "523",
+                            CityName = "San Miguelito",
+                            StateId = 14
+                        },
+                        new
+                        {
+                            Id = 121,
+                            CityCode = "524",
+                            CityName = "Morrito",
+                            StateId = 14
+                        },
+                        new
+                        {
+                            Id = 122,
+                            CityCode = "525",
+                            CityName = "San Juan del Norte",
+                            StateId = 14
+                        },
+                        new
+                        {
+                            Id = 123,
+                            CityCode = "526",
+                            CityName = "El Almendro",
+                            StateId = 14
+                        },
+                        new
+                        {
+                            Id = 124,
+                            CityCode = "561",
+                            CityName = "Rivas",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 125,
+                            CityCode = "562",
+                            CityName = "San Jorge",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 126,
+                            CityCode = "563",
+                            CityName = "Buenos Aires",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 127,
+                            CityCode = "564",
+                            CityName = "Potosí",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 128,
+                            CityCode = "565",
+                            CityName = "Belén",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 129,
+                            CityCode = "566",
+                            CityName = "Tola",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 130,
+                            CityCode = "567",
+                            CityName = "San Juan del Sur",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 131,
+                            CityCode = "568",
+                            CityName = "Cárdenas",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 132,
+                            CityCode = "569",
+                            CityName = "Moyogalpa",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 133,
+                            CityCode = "570",
+                            CityName = "Altagracia",
+                            StateId = 15
+                        },
+                        new
+                        {
+                            Id = 134,
+                            CityCode = "0",
+                            CityName = "DefectoNicaragua",
+                            StateId = 16
                         });
                 });
 
             modelBuilder.Entity("Domain.Entities.Country", b =>
                 {
-                    b.Property<int>("CountryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -159,21 +1090,21 @@ namespace Infrastructure.Migrations
                         .HasColumnType("varchar(20)")
                         .HasMaxLength(20);
 
-                    b.HasKey("CountryId");
+                    b.HasKey("Id");
 
                     b.ToTable("Countries");
 
                     b.HasData(
                         new
                         {
-                            CountryId = 1,
+                            Id = 1,
                             CountryName = "Nicaragua"
                         });
                 });
 
             modelBuilder.Entity("Domain.Entities.Option", b =>
                 {
-                    b.Property<int>("OptionId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -190,17 +1121,17 @@ namespace Infrastructure.Migrations
                     b.Property<string>("OptionName")
                         .IsRequired()
                         .HasColumnName("Name")
-                        .HasColumnType("varchar(15)")
-                        .HasMaxLength(15);
+                        .HasColumnType("varchar(30)")
+                        .HasMaxLength(30);
 
-                    b.HasKey("OptionId");
+                    b.HasKey("Id");
 
                     b.ToTable("Options");
                 });
 
             modelBuilder.Entity("Domain.Entities.PoliticalParty", b =>
                 {
-                    b.Property<int>("PoliticalPartyId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -214,20 +1145,26 @@ namespace Infrastructure.Migrations
                         .HasColumnType("varchar(6)")
                         .HasMaxLength(6);
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnName("ImageUrl")
+                        .HasColumnType("varchar(200)")
+                        .HasMaxLength(6);
+
                     b.Property<string>("PoliticalPartyName")
                         .IsRequired()
                         .HasColumnName("Name")
-                        .HasColumnType("varchar(30)")
-                        .HasMaxLength(30);
+                        .HasColumnType("varchar(60)")
+                        .HasMaxLength(60);
 
-                    b.HasKey("PoliticalPartyId");
+                    b.HasKey("Id");
 
                     b.ToTable("PoliticalParties");
                 });
 
             modelBuilder.Entity("Domain.Entities.Rol", b =>
                 {
-                    b.Property<int>("RolId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -241,14 +1178,26 @@ namespace Infrastructure.Migrations
                         .HasColumnType("varchar(15)")
                         .HasMaxLength(15);
 
-                    b.HasKey("RolId");
+                    b.HasKey("Id");
 
                     b.ToTable("Rols");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RolName = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            RolName = "User"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.RolOption", b =>
                 {
-                    b.Property<int>("RolOptionId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -262,7 +1211,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("RolId")
                         .HasColumnType("int");
 
-                    b.HasKey("RolOptionId");
+                    b.HasKey("Id");
 
                     b.HasIndex("OptionId");
 
@@ -273,7 +1222,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.State", b =>
                 {
-                    b.Property<int>("StateId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -290,7 +1239,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("varchar(20)")
                         .HasMaxLength(20);
 
-                    b.HasKey("StateId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CountryId");
 
@@ -299,15 +1248,105 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            StateId = 1,
+                            Id = 1,
                             CountryId = 1,
                             StateName = "Boaco"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CountryId = 1,
+                            StateName = "Carazo"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryId = 1,
+                            StateName = "Chinandega"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CountryId = 1,
+                            StateName = "Chontales"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CountryId = 1,
+                            StateName = "Estelí"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CountryId = 1,
+                            StateName = "Granada"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CountryId = 1,
+                            StateName = "Jinotega"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CountryId = 1,
+                            StateName = "León"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CountryId = 1,
+                            StateName = "Madriz"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CountryId = 1,
+                            StateName = "Managua"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CountryId = 1,
+                            StateName = "Masaya"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CountryId = 1,
+                            StateName = "Matagalpa"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CountryId = 1,
+                            StateName = "Nueva Segovia"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CountryId = 1,
+                            StateName = "Río San Juan"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CountryId = 1,
+                            StateName = "Rivas"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CountryId = 1,
+                            StateName = "Defecto"
                         });
                 });
 
             modelBuilder.Entity("Domain.Entities.TwoFactorAuthentication", b =>
                 {
-                    b.Property<int>("TwoFactorAuthenticationId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -338,7 +1377,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("TwoFactorAuthenticationId");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
@@ -347,7 +1386,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -361,29 +1400,23 @@ namespace Infrastructure.Migrations
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnName("FirstName")
-                        .HasColumnType("varchar(15)")
-                        .HasMaxLength(15);
-
                     b.Property<string>("Identification")
                         .IsRequired()
                         .HasColumnName("Identification")
                         .HasColumnType("varchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("LastNames")
                         .IsRequired()
-                        .HasColumnName("LastName")
-                        .HasColumnType("varchar(15)")
-                        .HasMaxLength(15);
+                        .HasColumnName("LastNames")
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("MiddleName")
+                    b.Property<string>("Names")
                         .IsRequired()
-                        .HasColumnName("MiddleName")
-                        .HasColumnType("varchar(15)")
-                        .HasMaxLength(15);
+                        .HasColumnName("Names")
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -396,20 +1429,14 @@ namespace Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasMaxLength(2);
 
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnName("Surname")
-                        .HasColumnType("varchar(15)")
-                        .HasMaxLength(15);
-
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Domain.Entities.UserAudit", b =>
                 {
-                    b.Property<int>("UserAuditId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -454,7 +1481,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasMaxLength(2);
 
-                    b.HasKey("UserAuditId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ChangesMadeByUserId");
 
@@ -465,7 +1492,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.UserRol", b =>
                 {
-                    b.Property<int>("UserRolId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -479,7 +1506,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("UserRolId");
+                    b.HasKey("Id");
 
                     b.HasIndex("RolId");
 
@@ -490,7 +1517,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Votation", b =>
                 {
-                    b.Property<int>("VotationId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -523,7 +1550,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("VotationTypeId")
                         .HasColumnType("int");
 
-                    b.HasKey("VotationId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CityId");
 
@@ -534,7 +1561,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            VotationId = 1,
+                            Id = 1,
                             CityId = 1,
                             VotationDescription = "Votacion de pruebas",
                             VotationEndDate = new DateTime(2020, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -546,7 +1573,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.VotationAudit", b =>
                 {
-                    b.Property<int>("VotationAuditId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -571,7 +1598,7 @@ namespace Infrastructure.Migrations
                         .HasColumnName("VotationStatusChangedTo")
                         .HasColumnType("int");
 
-                    b.HasKey("VotationAuditId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ChangesMadeByUserId");
 
@@ -582,7 +1609,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.VotationDetail", b =>
                 {
-                    b.Property<int>("VotationDetailId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -596,7 +1623,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("VotationId")
                         .HasColumnType("int");
 
-                    b.HasKey("VotationDetailId");
+                    b.HasKey("Id");
 
                     b.HasIndex("CandidateId");
 
@@ -607,7 +1634,7 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.VotationType", b =>
                 {
-                    b.Property<int>("VotationTypeId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -625,22 +1652,28 @@ namespace Infrastructure.Migrations
                         .HasColumnType("varchar(30)")
                         .HasMaxLength(30);
 
-                    b.HasKey("VotationTypeId");
+                    b.HasKey("Id");
 
                     b.ToTable("VotationTypes");
 
                     b.HasData(
                         new
                         {
-                            VotationTypeId = 1,
+                            Id = 1,
                             VotationTypeDescription = "Votaciones municipales",
                             VotationTypeName = "Alcaldía"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            VotationTypeDescription = "Votación nacional",
+                            VotationTypeName = "Presidencial"
                         });
                 });
 
             modelBuilder.Entity("Domain.Entities.Vote", b =>
                 {
-                    b.Property<int>("VoteId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -654,18 +1687,23 @@ namespace Infrastructure.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("VoteId");
+                    b.Property<int>("VotationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("CandidateId");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("VotationId");
 
                     b.ToTable("Votes");
                 });
 
             modelBuilder.Entity("Domain.Entities.VoteAudit", b =>
                 {
-                    b.Property<int>("VoteAuditId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id")
                         .HasColumnType("int")
@@ -679,7 +1717,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("VotationId")
                         .HasColumnType("int");
 
-                    b.HasKey("VoteAuditId");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
@@ -852,6 +1890,13 @@ namespace Infrastructure.Migrations
                         .WithMany("Votes")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FkUserVoteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Votation", "Votation")
+                        .WithMany("Votes")
+                        .HasForeignKey("VotationId")
+                        .HasConstraintName("FkVotationVoteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
